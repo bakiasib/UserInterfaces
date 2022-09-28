@@ -1,47 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Music Application Tittle</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div id="container" style="width: 100%; height: 100%; position: absolute; ">
-        <header style="background-color: rgb(255, 255, 255);">
-            <img src="image.jpeg"  style="    width: 100px;
+        <div class="grid">
+            <aside class="left-side">
+                <header style="background-color: rgb(255, 255, 255);">
+                    <img src="image.jpeg" style="    width: 100px;
             height: 100px;
             -webkit-mask-position-y: top;">
-            <h1 style="position: absolute;
+                    <h1 style="position: absolute;
             z-index: 0;
             left: 110px;
             top: 10px;"> Gride </h1>
+                </header>
 
-        </header>
+                <section style="background-color: rgb(233, 233, 238);">
 
-        <section style="background-color: rgb(233, 233, 238); width: 300px; height:100%;"> 
-            <nav>
-                <ul style="padding: 10px;">
-                    <table>
+
+                    <table class="menu-items">
                         <tr>
-                            <td> <img src="liked.png" width="50" height="50"> </td>
-                            <td>Liked Songs</td>
+                            <td>
+                                <img src="liked.png" width="50" height="50"> Liked songs
+                            </td>
                         </tr>
                         <tr>
-                            <td> <img src="roadtrip.jpeg" width="50" height="50"> </td>
-                            <td>Roadtrip</td>
+                            <td> <img src="roadtrip.jpeg" width="50" height="50">Roadtrip </td>
                         </tr>
                         <tr>
-                            <td> <img src="lofi.jpeg" width="50" height="50"> </td>
-                            <td>Lofi</td>
+                            <td> <img src="lofi.jpeg" width="50" height="50">Lofi </td>
                         </tr>
-                          </table>
-                </ul>
-            </nav>
-        </section>
+                        <tr class="blank_row">
+                            <td colspan="3"></td>
+                        </tr>
+                    </table>
+                </section>
 
-        <footer style="background-color: rgb(255, 255, 255);">
-            <p>MESSAGE FOR NEW USERS</p>
+            </aside>
+            
+            <aside class="right-side">
+                <header style="background-color: white; height: 100px; position: absolute;
+                max-width: 1060px;
+                width: -webkit-fill-available;">
+                    <h1 style="position: absolute;z-index: 0;right: 10%;top: 10px;"> Sign up </h1>
+
+                    <h1 style="position: absolute; z-index: 0;right: 0%; top: 10px;"> Log in </h1>
+                </header>
+                <section class="playlists" >
+                <div class="flex-container">
+                    <div> <img src="liked.png" width="150" height="150">
+                    <p> liked songs</p> </div>
+                    <div> <img src="liked.png" width="150" height="150">
+                        <p> liked songs</p> </div>
+                    <div> <img src="liked.png" width="150" height="150">
+                        <p> liked songs</p> </div>
+                    <div> <img src="liked.png" width="150" height="150">
+                        <p> liked songs</p> </div>
+                    <div> <img src="liked.png" width="150" height="150">
+                        <p> liked songs</p> </div>
+                </div>
+                <div class="flex-container">
+                    <div> <img src="liked.png" width="150" height="150">
+                    <p> liked songs</p> </div>
+                    <div> <img src="liked.png" width="150" height="150">
+                        <p> liked songs</p> </div>
+                    <div> <img src="liked.png" width="150" height="150">
+                        <p> liked songs</p> </div>
+                    <div> <img src="liked.png" width="150" height="150">
+                        <p> liked songs</p> </div>
+                    <div> <img src="liked.png" width="150" height="150">
+                        <p> liked songs</p> </div>
+                </div>
+                <div class="flex-container">
+                    <div> <img src="liked.png" width="150" height="150">
+                    <p> liked songs</p> </div>
+                    <div> <img src="liked.png" width="150" height="150">
+                        <p> liked songs</p> </div>
+                    <div> <img src="liked.png" width="150" height="150">
+                        <p> liked songs</p> </div>
+                    <div> <img src="liked.png" width="150" height="150">
+                        <p> liked songs</p> </div>
+                    <div> <img src="liked.png" width="150" height="150">
+                        <p> liked songs</p> </div>
+                </div>
+            </section>
+            </aside>
+            <footer>
+                MESSAGE FOR NEW USERS
             </footer>
-            </div>
-
-</body>
+        </div>
 </html>
