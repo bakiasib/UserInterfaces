@@ -2,12 +2,12 @@
     display: grid; 
     height: 100vh; /* 100% of the viewport height */
     grid-template-columns: 25% 75%; /* 2 columns with 25% and 75% width */
-    grid-template-rows: 10% 80% 10%; /* 3 rows with 20%, 70% and 10% height */
+    grid-template-rows: 20% 70% 10%; /* 3 rows with 20%, 70% and 10% height */
     grid-template-areas: 
         "header header2"
         "sidebar main"
         "footer footer";
-    grid-row-gap: 0.2rem; /* 0.2rem gap between the columns and rows */
+    grid-gap: 0.2rem; /* 0.2rem gap between the columns and rows */
 }
 
 main{
@@ -17,78 +17,30 @@ main{
 
 #header1{
     grid-area: header;
-    background-color: #f5f4f4;
+    background-color: #f1f1f1;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 100%;
     grid-template-areas: 
         "logo tittle";
-    align-items: center;
-}
-img{
-    max-width: 70%;
-    max-height: 70%;
-    align-self: center;
+    justify-content: center;
 }
 #logo{
     grid-area: logo;
-    max-height: 100%;
-    max-width: 100%;
-    
+    background-color: #f1f1f1;
+    width: webkit-fill-available;
+}
+#tittle{
+    grid-area: tittle;
+    background-color: #f1f1f1;
 }
 #header2{
-    background-color: #f5f4f4;
+    background: lightblue;
     grid-area: header2;
-    display : grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 100%;
-    grid-template-areas: 
-        ". . signUp logIn";
-}
-.rowWrapper{
-    display:contents;
-    width: 100%;
-    height: 100%;
-}
-.rowWrapper:hover > *{
-    background-color: gray;
-}
-
-button{
-    padding: 0.5rem;
-    width: 90%;
-    height: 70%;
-    text-align: center;
-
-}
-#signUp{
-    grid-area: signUp;
-    align-self: center;
-   
-}
-#logIn{
-    grid-area: logIn;
-    align-self: center;
-    justify-self: center;
 }
 #sidebar{
-    background: lightcyan;
+    background: lightgreen;
     grid-area: sidebar;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 65% 15%% 20%;
-    grid-template-areas: 
-        "tab1"
-        ". "
-        "link1"
-        "link2";
-    align-items: center;
-    justify-items: center;
-    grid-gap: 0.5rem;
-}
-
-.menu-items tr:hover {
-    background-color: red;
 }
 
 footer{
@@ -99,29 +51,6 @@ footer{
 @media only sreen and (max-width:700px){
 
 
-}
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    overflow: scroll;
-=}
-
-.flex-container >div {
-    font-size: 20px;
-    overflow-wrap: anywhere;
-    text-align: center;
-    width: 100%;
-    height: 400px;
-}
-.flex-container >div:hover {
-    background-color: darkgray;
-}
-
-.playlists {
-    overflow: scroll;
-    max-height: 95%;
 }
 
 
@@ -153,7 +82,9 @@ footer{
 
 }
 
-
+.playlists {
+    margin-top: 100px;
+}
 
 
 
