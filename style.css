@@ -2,7 +2,7 @@
 .container {
     display: grid;
     height: 100vh;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 11% 89%;
     grid-template-rows: 10% 2% 80% 2% 6%;
     grid-template-areas:
         "header header2"
@@ -97,15 +97,15 @@
     grid-area: sidebar;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 65% 15% 5% 5% 10%;
+    grid-template-rows: 10% 60% 20% 5% 5% 10%;
     grid-template-areas:
+        "."
         "tab1"
         ". "
         "link1"
         "link2"
         ".";
     text-align: center;
-    grid-gap: 0.5rem;
 }
 
 .menu-items tr:hover {
