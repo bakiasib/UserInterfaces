@@ -1,0 +1,29 @@
+  <div id="sidebar">
+        <table class="menu-items" style="grid-area:tab1;">
+            <tr>
+                <td>
+                    <span class="material-symbols-outlined">
+                        home
+                        </span> Home
+                </td>
+            </tr>
+            <tr>
+                <td> <span class="material-symbols-outlined">
+                    search
+                    </span> Search
+                    </td>
+            </tr>
+            <tr>
+                <td> <span class="material-symbols-outlined">
+                    library_music
+                    </span> Playlists
+            </tr>
+            <tr>
+                <td> <span class="material-symbols-outlined">
+                    settings
+                    </span> Settings
+            </tr>
+            <tr class="blank_row">
+                <td colspan="3"></td>
+            </tr>
+        </table>
