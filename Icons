@@ -1,4 +1,5 @@
-  <div id="sidebar">
+    </main>
+    <div id="sidebar">
         <table class="menu-items" style="grid-area:tab1;">
             <tr>
                 <td>
@@ -7,16 +8,33 @@
                         </span> Home
                 </td>
             </tr>
+            <tr class="blank_row">
+                <td colspan="5"></td>
+            </tr>
             <tr>
                 <td> <span class="material-symbols-outlined">
                     search
                     </span> Search
                     </td>
             </tr>
+            <tr class="blank_row">
+                <td colspan="5"></td>
+            </tr>
             <tr>
                 <td> <span class="material-symbols-outlined">
                     library_music
                     </span> Playlists
+            </tr>
+            <tr class="blank_row">
+                <td colspan="5"></td>
+            </tr>
+            <tr>
+                <td> <span class="material-symbols-outlined">
+                    library_add
+                    </span> Create Playlist
+            </tr>
+            <tr class="blank_row">
+                <td colspan="5"></td>
             </tr>
             <tr>
                 <td> <span class="material-symbols-outlined">
@@ -24,6 +42,7 @@
                     </span> Settings
             </tr>
             <tr class="blank_row">
-                <td colspan="3"></td>
+                <td colspan="5"></td>
             </tr>
+            
         </table>
