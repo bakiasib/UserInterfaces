@@ -1,235 +1,196 @@
-.container{
-    display: grid; 
-    height: 100vh; /* 100% of the viewport height */
-    grid-template-columns: 25% 75%; /* 2 columns with 25% and 75% width */
-    grid-template-rows: 10% 80% 10%; /* 3 rows with 20%, 70% and 10% height */
-    grid-template-areas: 
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 10% 2% 80% 2% 6%;
+    grid-template-areas:
         "header header2"
-        "sidebar main"
+        ". ."
+        "sidebar main-section"
+        ". ."
         "footer footer";
-    grid-row-gap: 0.2rem; /* 0.2rem gap between the columns and rows */
 }
 
-main{
-    background-color: beige;
-    grid-area: main;
+#main-section {
+    grid-area: main-section;
+    display: grid;
+    align-items: center;
+    grid-auto-flow: row;
+    grid-template-columns: unset;
+    grid-template-rows: unset;
+    overflow: scroll;
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
 }
 
-#header1{
+#title {
+    grid-area: title;
+    color: brown;
+    font-family: sans-serif;
+    font-size: large;
+    position: absolute;
+    left: 12%;
+}
+
+#header1 {
     grid-area: header;
-    background-color: #f5f4f4;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 100%;
-    grid-template-areas: 
-        "logo tittle";
+    grid-template-areas:
+        "logo title";
     align-items: center;
+
 }
-img{
-    max-width: 70%;
-    max-height: 70%;
-    align-self: center;
-}
-#logo{
+
+
+
+#logo {
     grid-area: logo;
-    max-height: 100%;
-    max-width: 100%;
-    
+    width: 11%;
+    position: absolute;
+    top: 3%;
+    left: 2%;
+
 }
-#header2{
-    background-color: #f5f4f4;
+
+#header2 {
     grid-area: header2;
-    display : grid;
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 100%;
-    grid-template-areas: 
+    grid-template-areas:
         ". . signUp logIn";
 }
-.rowWrapper{
-    display:contents;
+
+.rowWrapper {
+    display: contents;
     width: 100%;
     height: 100%;
 }
-.rowWrapper:hover > *{
+
+.rowWrapper:hover>* {
     background-color: gray;
 }
 
-button{
+#header2 button {
     padding: 0.5rem;
     width: 90%;
     height: 70%;
     text-align: center;
 
 }
-#signUp{
+
+#signUp {
     grid-area: signUp;
     align-self: center;
-   
+
 }
-#logIn{
+
+#logIn {
     grid-area: logIn;
     align-self: center;
     justify-self: center;
 }
-#sidebar{
-    background: lightcyan;
+
+#sidebar {
     grid-area: sidebar;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 65% 15%% 20%;
-    grid-template-areas: 
+    grid-template-rows: 65% 15% 5% 5% 10%;
+    grid-template-areas:
         "tab1"
         ". "
         "link1"
-        "link2";
-    align-items: center;
-    justify-items: center;
+        "link2"
+        ".";
+    text-align: center;
     grid-gap: 0.5rem;
 }
 
 .menu-items tr:hover {
-    background-color: red;
-}
-
-footer{
-    background: lightcoral;
-    grid-area: footer;
-}
-
-@media only sreen and (max-width:700px){
-}
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    overflow: scroll;
-=}
-
-.flex-container >div {
-    font-size: 20px;
-    overflow-wrap: anywhere;
-    text-align: center;
-    width: 100%;
-    height: 400px;
-}
-.flex-container >div:hover {
-    background-color: darkgray;
-}
-
-.playlists {
-    overflow: scroll;
-    max-height: 95%;
-}
-
-
-
-
-
-
-
-
-
-
-
-/*
-.grid {
-    display: grid;
-    grid-template-columns: 25% 75%;
-    grid-template-rows: 1fr min-content;
-    grid-gap: 1em;
-}
-
-.left-side {
-    background: lightblue;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    position: absolute;
-    width: 20%;
-
-}
-
-
-
-
-
-
-.right-side {
-    background: lightgreen;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    overflow: scroll;
-    height: 100%;
-    max-height: 1000px;
-}
-
-
-header {
-    grid-column-start: 1;
-    grid-column-end: 3;
-
+    background-color: lightgray;
 }
 
 footer {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    background: lightcoral;
-    position: absolute;
-    bottom: 0;
-    height: 25px;
-    width: 100%;
+    grid-area: footer;
     text-align: center;
-    padding: 1%;
+    background: black;
+    height: fit-content;
 }
 
+@media (max-width:700px) {
+    .container {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 13% 87%;
+        grid-template-rows: 8% 2% 80% 2% 8%;
+        grid-template-areas:
+            "header header2"
+            ". ."
+            "sidebar main-section"
+            ". ."
+            "footer footer";
+    }
+    .menu-items .icon-label {
+        display: none;
+    }
 
-.menu-items {
-    table-layout: fixed;
-}
-
-
-.menu-items td {
-    width: 25%;
-    padding: 1%;
-}
-
-.menu-items tr:hover {
-    background-color: red;
-}
-
-.menu-items .blank_row {
-    height: 100px
-}
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    overflow: scroll;
-=}
-
-.flex-container >div {
-    font-size: 20px;
-    overflow-wrap: anywhere;
-    text-align: center;
-    width: 100%;
-    height: 400px;
-}
-.flex-container >div:hover {
-    background-color: darkgray;
-}
-
-@media only screen and (max-width:800px)
-{
-    body {
-        height: 100%;
-        width: 100%;
+    footer {
+        font-size: small;
     }
 }
 
 
-*/
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: scroll;
+    border-bottom: 3px solid lightgray;
+}
+
+.flex-container>div {
+    font-size: 20px;
+    overflow-wrap: anywhere;
+    text-align: center;
+    width: 100%;
+    padding: 5%;
+    height: 300px;
+}
+
+p{
+    font-size: 80%;
+}
+
+.album-img .btn {
+    position: relative;
+    top: 8%;
+    left: 5%;
+    width: 38%;
+    height: 20%;
+    border-radius: 35%;
+    display: none;
+    border-style: none;
+}
+
+.album-img .btn-pause {
+    position: relative;
+    top: -12%;
+    left: 50%;
+    width: 38%;
+    height: 20%;
+    border-radius: 35%;
+    display: none;
+    border-style: none;
+}
+.album-img:hover {
+    background: lightgray;
+}
+.album-img:hover .btn {
+    display: block;
+}
+.album-img:hover .btn-pause {
+    display: block;
+}

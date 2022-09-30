@@ -2,193 +2,257 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Music Application Tittle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>Music Application Title</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
 </head>
 
+<!-- Major container representing display as a grid made of a left and a right column -->
 <div class="container">
-    <div id="header1">
-        <img id="logo" src="logo.png">
-        <h4 id="title">Gride</h4>
-    </div>
-    <div id="header2"> <button id="signUp">Sign up</button><button id="logIn">Log in</button></div>
-    <main>
-        <table id="tablePlayList">
-            <tr>
-                <th>Recently played songs</th>
-            </tr>
+    <!-- Logo and Name of site located on first column -->
 
-        </table>
+    <div id="header1">
+        <img id="logo" src="images/logo.png">
+        <h1 id="title">Gride</h1>
+    </div>
+
+    <!-- Log in and sign up buttons located in second column -->
+    <div id="header2"> <button id="signUp">Sign up</button><button id="logIn">Log in</button></div>
+
+    <!-- Main content of site located in second column which has the playlists and respective songs-->
+    <main id="main-section">
         <section class="playlists">
+            <div class="main-headers">
+
+                <!-- First playlist -->
+                <h2 style="padding: 5%;  font-weight: 400;   margin: 0%;">Recently Played </h2>
+            </div>
             <div class="flex-container">
-                <div> <img src="BackInBlack.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/BackInBlack.jpeg" width="150" height="150">
+                    <audio id="sound1" src="music/sound.mp3" preload="auto"></audio>
+                    <button type="button" class="btn" onclick="document.getElementById('sound1').play();">
+                        <span class="material-symbols-outlined">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn-pause" onclick="document.getElementById('sound1').pause();">
+                        <span class="material-symbols-outlined">pause</span>
+                    </button>
                     <p> Shoot to Thrill by AC/DC 1980 </p>
                 </div>
-                <div> <img src="BornInTheUSA.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/BornInTheUSA.jpeg" width="150" height="150">
+                    <audio id="sound2" src="music/s1.mp3" preload="auto"></audio>
+                    <button type="button" class="btn" onclick="document.getElementById('sound2').play();">
+                        <span class="material-symbols-outlined">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn-pause" onclick="document.getElementById('sound2').pause();">
+                        <span class="material-symbols-outlined">pause</span>
+                    </button>
                     <p> Born in the USA by Bruce Springsteen 1984 </p>
                 </div>
-                <div> <img src="DarkSideOfTheMoon.webp" width="150" height="150">
+                <div class="album-img"> <img src="images/DarkSideOfTheMoon.webp" width="150" height="150">
+                    <audio id="sound3" src="music/s2.mp3" preload="auto"></audio>
+                    <button type="button" class="btn" onclick="document.getElementById('sound3').play();">
+                        <span class="material-symbols-outlined">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn-pause" onclick="document.getElementById('sound3').pause();">
+                        <span class="material-symbols-outlined">pause</span>
+                    </button>
                     <p> Time by Pink Floyd 1973 </p>
                 </div>
-                <div> <img src="HotelCalifornia.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/HotelCalifornia.jpeg" width="150" height="150">
+                    <audio id="sound4" src="music/s3.mp3" preload="auto"></audio>
+                    <button type="button" class="btn" onclick="document.getElementById('sound4').play();">
+                        <span class="material-symbols-outlined">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn-pause" onclick="document.getElementById('sound4').pause();">
+                        <span class="material-symbols-outlined">pause</span>
+                    </button>
                     <p> Hotel California by Eagles 1976 </p>
                 </div>
-                <div> <img src="QueenII.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/QueenII.jpeg" width="150" height="150">
+                    <audio id="sound5" src="music/s4.mp3" preload="auto"></audio>
+                    <button type="button" class="btn" onclick="document.getElementById('sound5').play();">
+                        <span class="material-symbols-outlined">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn-pause" onclick="document.getElementById('sound5').pause();">
+                        <span class="material-symbols-outlined">pause</span>
+                    </button>
                     <p> Nevermore by Queen 1974 </p>
                 </div>
             </div>
+
+             <!-- Second playlist -->
+            <div class="main-headers">
+                <h2 style="padding: 5%;  font-weight: 400;  margin: 0%;">Trending now</h2>
+            </div>
             <div class="flex-container">
-                <div> <img src="MBDTF.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/MBDTF.jpeg" width="150" height="150">
+                    <audio id="sound6" src="music/s5.mp3" preload="auto"></audio>
+                    <button type="button" class="btn" onclick="document.getElementById('sound6').play();">
+                        <span class="material-symbols-outlined">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn-pause" onclick="document.getElementById('sound6').pause();">
+                        <span class="material-symbols-outlined">pause</span>
+                    </button>
                     <p> Runaway by Kanye West, Pusha T 2010 </p>
                 </div>
-                <div> <img src="Starboy.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/Starboy.jpeg" width="150" height="150">
+                    <audio id="sound7" src="music/s6.mp3" preload="auto"></audio>
+                    <button type="button" class="btn" onclick="document.getElementById('sound7').play();">
+                        <span class="material-symbols-outlined">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn-pause" onclick="document.getElementById('sound7').pause();">
+                        <span class="material-symbols-outlined">pause</span>
+                    </button>
                     <p> Starboy by The Weeknd, Daft Punk, 2016 </p>
                 </div>
-                <div> <img src="flowerboy.webp" width="150" height="150">
+                <div class="album-img"> <img src="images/flowerboy.webp" width="150" height="150">
+                    <audio id="sound8" src="music/s7.mp3" preload="auto"></audio>
+                    <button type="button" class="btn" onclick="document.getElementById('sound8').play();">
+                        <span class="material-symbols-outlined">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn-pause" onclick="document.getElementById('sound8').pause();">
+                        <span class="material-symbols-outlined">pause</span>
+                    </button>
                     <p> See You Again by Tyler the Creator (feat. Kali Uchis) 2017 </p>
                 </div>
-                <div> <img src="DemonDays.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/DemonDays.jpeg" width="150" height="150">
+                    <audio id="sound9" src="music/s8.mp3" preload="auto"></audio>
+                    <button type="button" class="btn" onclick="document.getElementById('sound9').play();">
+                        <span class="material-symbols-outlined">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn-pause" onclick="document.getElementById('sound9').pause();">
+                        <span class="material-symbols-outlined">pause</span>
+                    </button>
                     <p> Feel Good Inc. by Gorillaz 2005 </p>
                 </div>
-                <div> <img src="Stankonia.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/Stankonia.jpeg" width="150" height="150">
+                    <audio id="sound10" src="music/s11.mp3" preload="auto"></audio>
+                    <button type="button" class="btn" onclick="document.getElementById('sound10').play();">
+                        <span class="material-symbols-outlined">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn-pause" onclick="document.getElementById('sound10').pause();">
+                        <span class="material-symbols-outlined">pause</span>
+                    </button>
                     <p> Ms. Jackson by Outkast 2000 </p>
                 </div>
             </div>
+                
+            <!-- Third playlist -->
+            <div class="main-headers">
+                <h2 style="padding: 5%;  font-weight: 400;   margin: 0%;">More of what you like</h2>
+            </div>
             <div class="flex-container">
-                <div> <img src="LicensedToiLL.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/LicensedToiLL.jpeg" width="150" height="150">
+                    <audio id="sound11" src="music/s12.mp3" preload="auto"></audio>
+                    <button type="button" class="btn" onclick="document.getElementById('sound11').play();">
+                        <span class="material-symbols-outlined">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn-pause" onclick="document.getElementById('sound11').pause();">
+                        <span class="material-symbols-outlined">pause</span>
+                    </button>
                     <p> Fight For Your Right by Beastie Boys 1986 </p>
                 </div>
-                <div> <img src="Currents.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/Currents.jpeg" width="150" height="150">
+                    <audio id="sound12" src="music/s13.mp3" preload="auto"></audio>
+                    <button type="button" class="btn" onclick="document.getElementById('sound12').play();">
+                        <span class="material-symbols-outlined">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn-pause" onclick="document.getElementById('sound12').pause();">
+                        <span class="material-symbols-outlined">pause</span>
+                    </button>
                     <p> The Less I Know The Better by Tame Impala 2015 </p>
                 </div>
-                <div> <img src="TheLowEndTheory.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/TheLowEndTheory.jpeg" width="150" height="150">
+                    <audio id="sound13" src="music/s14.mp3" preload="auto"></audio>
+                    <button type="button" class="btn" onclick="document.getElementById('sound13').play();">
+                        <span class="material-symbols-outlined">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn-pause" onclick="document.getElementById('sound13').pause();">
+                        <span class="material-symbols-outlined">pause</span>
+                    </button>
                     <p> Check the Rhime by A Tribe Called Quest 1991 </p>
                 </div>
-                <div> <img src="Blond.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/Blond.jpeg" width="150" height="150">
+                    <audio id="sound14" src="music/s14.mp3" preload="auto"></audio>
+                    <button type="button" class="btn" onclick="document.getElementById('sound14').play();">
+                        <span class="material-symbols-outlined">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn-pause" onclick="document.getElementById('sound14').pause();">
+                        <span class="material-symbols-outlined">pause</span>
+                    </button>
                     <p> Ivy by Frank Ocean 2016 </p>
                 </div>
-                <div> <img src="Yeezus.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/Yeezus.jpeg" width="150" height="150">
+                    <audio id="sound15" src="music/s15.mp3" preload="auto"></audio>
+                    <button type="button" class="btn" onclick="document.getElementById('sound15').play();">
+                        <span class="material-symbols-outlined">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn-pause" onclick="document.getElementById('sound15').pause();">
+                        <span class="material-symbols-outlined">pause</span>
+                    </button>
                     <p> Bound 2 by Kanye West 2013</p>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Sidebar where the menu items are listed with their icons and description together with link to Privacy and Cookies Policy-->
     <div id="sidebar">
         <table class="menu-items" style="grid-area:tab1;">
             <tr>
                 <td>
-                    <img src="home.png" width=20%>Home
+                    <span class="material-symbols-outlined">
+                        home
+                    </span>
+                    <p class="icon-label">Home</p>
                 </td>
             </tr>
             <tr>
-                <td> <img src="search.png" width=20%>Search</td>
+                <td> <span class="material-symbols-outlined">
+                        search
+                    </span>
+                    <p class="icon-label">Search</p>
+                </td>
             </tr>
             <tr>
-                <td> <img src="playlist.png" width=20%>Playlist</td>
+                <td> <span class="material-symbols-outlined">
+                        library_music
+                    </span>
+                    <p class="icon-label">Playlists</p>
             </tr>
             <tr>
-                <td> <img src="settings.png" width=20%>Settings</td>
+                <td> <span class="material-symbols-outlined">
+                        library_add
+                    </span>
+                    <p class="icon-label">Create Playlist</p>
             </tr>
-            <tr class="blank_row">
-                <td colspan="3"></td>
+            <tr>
+                <td> <span class="material-symbols-outlined">
+                        settings
+                    </span>
+                    <p class="icon-label">Settings</p>
             </tr>
         </table>
-        <a href="https://policies.google.com/privacy?hl=en-US" style="grid-area: link1; text-align: center;">Privacy
+
+        <a href=""
+            style="grid-area: link1;text-align: center;font-size: 70%;text-decoration: none;color: black;">Privacy
             policy</a>
-        <a href="https://automattic.com/cookies/" style="grid-area: link2; text-align: center;">Cookies policy</a>
+        <a href=""
+            style="grid-area: link2;text-align: center;font-size: 70%;text-decoration: none;color: black;">Cookies
+            policy</a>
 
     </div>
-    <footer> footer</footer>
+
+    <!-- Footer with a welcome message to the users -->
+    <footer>
+        <p style="color:ghostwhite;"> Welcome to Gride! Here you can stream free music as well as create your own
+            playlists or listen to the ones we have created for you. </p>
+    </footer>
 
 </div>
-<!--
-<body>
-        <div class="grid">
-            <aside class="left-side">
-                <header style="background-color: rgb(255, 255, 255);">
-                    <img src="image.jpeg" style="    width: 100px;
-            height: 100px;
-            -webkit-mask-position-y: top;">
-                    <h1 style="position: absolute;
-            z-index: 0;
-            left: 110px;
-            top: 10px;"> Gride </h1>
-                </header>
-
-                <section style="background-color: rgb(233, 233, 238);">
-
-
-                    <table class="menu-items">
-                        <tr>
-                            <td>
-                                <img src="liked.png" width="50" height="50"> Liked songs
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> <img src="roadtrip.jpeg" width="50" height="50">Roadtrip </td>
-                        </tr>
-                        <tr>
-                            <td> <img src="lofi.jpeg" width="50" height="50">Lofi </td>
-                        </tr>
-                        <tr class="blank_row">
-                            <td colspan="3"></td>
-                        </tr>
-                    </table>
-                </section>
-
-            </aside>
-            
-            <aside class="right-side">
-                <header style="background-color: white; height: 100px; position: absolute;
-                max-width: 1060px;
-                width: -webkit-fill-available;">
-                    <h1 style="position: absolute;z-index: 0;right: 10%;top: 10px;"> Sign up </h1>
-
-                    <h1 style="position: absolute; z-index: 0;right: 0%; top: 10px;"> Log in </h1>
-                </header>
-                <section class="playlists" >
-                <div class="flex-container">
-                    <div> <img src="liked.png" width="150" height="150">
-                    <p> liked songs</p> </div>
-                    <div> <img src="liked.png" width="150" height="150">
-                        <p> liked songs</p> </div>
-                    <div> <img src="liked.png" width="150" height="150">
-                        <p> liked songs</p> </div>
-                    <div> <img src="liked.png" width="150" height="150">
-                        <p> liked songs</p> </div>
-                    <div> <img src="liked.png" width="150" height="150">
-                        <p> liked songs</p> </div>
-                </div>
-                <div class="flex-container">
-                    <div> <img src="liked.png" width="150" height="150">
-                    <p> liked songs</p> </div>
-                    <div> <img src="liked.png" width="150" height="150">
-                        <p> liked songs</p> </div>
-                    <div> <img src="liked.png" width="150" height="150">
-                        <p> liked songs</p> </div>
-                    <div> <img src="liked.png" width="150" height="150">
-                        <p> liked songs</p> </div>
-                    <div> <img src="liked.png" width="150" height="150">
-                        <p> liked songs</p> </div>
-                </div>
-                <div class="flex-container">
-                    <div> <img src="liked.png" width="150" height="150">
-                    <p> liked songs</p> </div>
-                    <div> <img src="liked.png" width="150" height="150">
-                        <p> liked songs</p> </div>
-                    <div> <img src="liked.png" width="150" height="150">
-                        <p> liked songs</p> </div>
-                    <div> <img src="liked.png" width="150" height="150">
-                        <p> liked songs</p> </div>
-                    <div> <img src="liked.png" width="150" height="150">
-                        <p> liked songs</p> </div>
-                </div>
-            </section>
-            </aside>
-            <footer>
-                MESSAGE FOR NEW USERS
-            </footer>
-        </div>
-    -->
 </html>
+
