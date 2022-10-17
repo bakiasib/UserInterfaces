@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Log In</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="id02" class="modal" style="position:fixed">
+  
+            <form class="modal-content animate" action="/action_page.php" method="post">
+              <div class="imgcontainer">
+                <img src="images/logo.png" alt="Avatar" class="avatar">
+              </div>
+          
+              <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+          
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+    
+                <label for="fname"><b>First Name</b></label>
+                <input type="text" placeholder="Enter first name" name="fname" required>
+    
+    
+                <label for="lname"><b>Last Name</b></label>
+                <input type="text" placeholder="Enter last name" name="lname" required>
+    
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter email" name="email" required>
+    
+                <label for="dob"><b>Date of Birth</b></label>
+                <input type="text" placeholder="Enter date of birth" name="dob" required>
+    
+                <label>
+                    <input type="checkbox" checked="checked" name="accepted"> I've read and accepted the terms of use.
+                  </label>
+                  
+                <button type="submit" onclick=save(uname,psw,fname,lname,email,dob,accepted)>Save</button>
+                <button type="cancel">Delete</button>
+                <label>
+                    <h4>Sign up with:</h4>
+                    <img src="images/google.png" alt="google" class="google" style="width: 11%;cursor: pointer;position: relative;left: 35%;">
+                    <img src="images/facebook.png" alt="facebook" class="facebook" style="width: 11.7%;cursor: pointer; position: relative;left: 40%;">
+                 </label>
+    
+              </div>
+    
+            </form>
+          </div>
+       
+    
+          <script>
+    
+            function createCookies(uname,psw,fname,lname,email,dob,accepted) {
+                var list = [psw,fname,lname,email,dob,accepted];
+                document.cookie = "username=" + uname + ";" + list;
+                return 
+            }
+    
+            </script>
+          
+</html>

@@ -1,5 +1,5 @@
 
-.container {
+#container1 {
     display: grid;
     height: 100vh;
     grid-template-columns: 11% 89%;
@@ -25,8 +25,8 @@
 
 #title {
     grid-area: title;
-    color: brown;
-    font-family: sans-serif;
+    color: #9c3433;
+    font-family: 'Material Symbols Outlined';
     font-size: large;
     position: absolute;
     left: 12%;
@@ -75,23 +75,35 @@
 
 #header2 button {
     padding: 0.5rem;
-    width: 90%;
-    height: 70%;
+    width: 58%;
+    height: fit-content;
     text-align: center;
-
+    cursor: pointer;
+    border: 0;
+    border-radius: 4%;
+    font-weight: 300;
+    transition: 0.4s;
+    font-family: sans-serif;
 }
 
+#header2 button:hover {
+    color: #ffffff;
+    background-color: rgb(157 51 51);
+}
+  
 #signUp {
+    
     grid-area: signUp;
     align-self: center;
-
+    margin-left: 80%;
 }
 
 #logIn {
     grid-area: logIn;
     align-self: center;
-    justify-self: center;
+    margin-left: 42%;
 }
+
 
 #sidebar {
     grid-area: sidebar;
@@ -120,7 +132,7 @@ footer {
 }
 
 @media (max-width:700px) {
-    .container {
+    #container1 {
         display: grid;
         height: 100vh;
         grid-template-columns: 13% 87%;
@@ -148,7 +160,6 @@ footer {
     justify-content: space-between;
     align-items: center;
     overflow: scroll;
-    border-bottom: 3px solid lightgray;
 }
 
 .flex-container>div {
@@ -194,3 +205,79 @@ p{
 .album-img:hover .btn-pause {
     display: block;
 }
+
+/* Style for Login and Sign Up */
+
+input[type=text], input[type=password]{
+    width: 100%;
+    padding: 2% 2%;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+  
+  #id01 button,  #id02 button  {
+    background-color: rgb(157 51 51);
+    color: white;
+    padding: 2% 2%;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+
+.imgcontainer {
+    text-align: center;
+    margin: 15% 0 10% 0;
+  }
+  
+  img.avatar {
+    width: 40%;
+  }
+  
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+
+  #id01, #id02{
+    height: 100%;
+    overflow: scroll;
+  }
+  
+  #id01 .modal,  #id02 .modal {
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: scroll; 
+    padding-top: 60px;
+  }
+  
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; 
+    width: 80%; }
+  
+  
+  /* Add Zoom Animation */
+  .animate {
+    animation: animatezoom 0.4s
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+  }

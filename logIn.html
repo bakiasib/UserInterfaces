@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Log In</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="id01" class="modal" style="position:fixed">
+  
+            <form class="modal-content animate" action="/action_page.php" method="post">
+              <div class="imgcontainer">
+                <img src="images/logo.png" alt="Avatar" class="avatar">
+              </div>
+          
+              <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+          
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                  </label>
+                  
+                <button type="submit" onclick=checkCookie()>Login</button>
+    
+                <label>
+                     <h4>Sign in with:</h4>
+                     <img src="images/google.png" alt="google" class="google" style="width: 11%;cursor: pointer;position: relative;left: 35%;">
+                     <img src="images/facebook.png" alt="facebook" class="facebook" style="width: 11.7%;cursor: pointer; position: relative;left: 40%;">
+                  </label>
+    
+              </div>
+    
+            </form>
+          </div>
+    
+          <script>
+
+        function getCookie(cname, cpwd) {
+          var name = cname + "=";
+          var password = cpwd + "=";
+          var decodedCookie = decodeURIComponent(document.cookie);
+          var ca = decodedCookie.split(';');
+          for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0 && c.indexOf(password) == 0) {
+              return c.substring(name.length, c.length);
+            }
+          }
+          return "";
+        }
+
+        function checkCookie() {
+            var user=getCookie("username", "password");
+            if (user != "") {
+                alert("Welcome again " + user);
+            } else {
+                 user = prompt("Username is invalid","");
+                 password = prompt("Password is invalid","");
+                    if (user != "" && user != null && password != "" && password != null)  {
+                        createCookie(user, password);
+                    }
+
+            }
+        }
+            </script>
+          
+</html>

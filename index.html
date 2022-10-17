@@ -8,11 +8,12 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    
 
 </head>
 
 <!-- Major container representing display as a grid made of a left and a right column -->
-<div class="container">
+<div id="container1" >
     <!-- Logo and Name of site located on first column -->
 
     <div id="header1">
@@ -21,7 +22,16 @@
     </div>
 
     <!-- Log in and sign up buttons located in second column -->
-    <div id="header2"> <button id="signUp">Sign up</button><button id="logIn">Log in</button></div>
+    <div id="header2"> 
+        
+        <button id="signUp" onclick="window.location.href='signUp.html'">Sign up</button>
+        <button id="logIn" onclick="window.location.href='logIn.html'">Log in</button></div>
+
+
+
+      
+
+
 
     <!-- Main content of site located in second column which has the playlists and respective songs-->
     <main id="main-section">
@@ -29,7 +39,7 @@
             <div class="main-headers">
 
                 <!-- First playlist -->
-                <h2 style="padding: 5%;  font-weight: 400;   margin: 0%;">Recently played </h2>
+                <h2 style="padding: 5%;  font-weight: 400;  margin-top: 0%;">Recently played </h2>
             </div>
             <div class="flex-container">
                 <div class="album-img"> <img src="images/BackInBlack.jpeg" width="150" height="150">
