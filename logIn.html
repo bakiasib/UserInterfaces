@@ -8,7 +8,7 @@
     <body>
         <div id="id01" class="modal" style="position:fixed">
   
-            <form class="modal-content animate" action="/action_page.php" method="post">
+            <form class="modal-content animate">
               <div class="imgcontainer">
                 <img src="images/logo.png" alt="Avatar" class="avatar">
               </div>
@@ -40,7 +40,6 @@
 
         function getCookie(cname, cpwd) {
           var name = cname + "=";
-          var password = cpwd + "=";
           var decodedCookie = decodeURIComponent(document.cookie);
           var ca = decodedCookie.split(';');
           for(var i = 0; i <ca.length; i++) {
@@ -48,8 +47,12 @@
             while (c.charAt(0) == ' ') {
               c = c.substring(1);
             }
-            if (c.indexOf(name) == 0 && c.indexOf(password) == 0) {
-              return c.substring(name.length, c.length);
+            if (c.indexOf(name) == 0) {
+              var listName = c.substring(name.length, c.length);
+              var list = JSON.parse($.cookie(listName));
+                if (list[0] == cpwd) {
+                    return listName;
+                }
             }
           }
           return "";
@@ -62,12 +65,10 @@
             } else {
                  user = prompt("Username is invalid","");
                  password = prompt("Password is invalid","");
-                    if (user != "" && user != null && password != "" && password != null)  {
-                        createCookie(user, password);
-                    }
-
             }
         }
+
+
             </script>
           
 </html>
