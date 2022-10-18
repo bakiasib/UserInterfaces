@@ -58,7 +58,7 @@
                 d.setTime(d.getTime() + (1*24*60*60*1000));
                 let expires = "expires="+ d.toUTCString();
                 var list = [psw,fname,lname,email,dob,accepted];
-                document.cookie = uname + "=" + list + ";" + expires + ";path=index.html";
+                document.cookie = uname + "=" + list + ";" + expires + ";path=/";
                 return 
             }
             function getCookie(uname) {
