@@ -8,7 +8,7 @@
     <body>
         <div id="id02" class="modal" style="position:fixed">
   
-            <form class="modal-content animate" action="/account" method="post">
+            <form class="modal-content animate" action="logIn.html" method="post">
               <div class="imgcontainer">
                 <img src="images/logo.png" alt="Avatar" class="avatar">
               </div>
@@ -61,28 +61,11 @@
                 document.cookie = uname + "=" + list + ";" + expires + ";path=/";
                 return 
             }
-            function getCookie(uname) {
-                var name = uname + "=";
-                var decodedCookie = decodeURIComponent(document.cookie);
-                var ca = decodedCookie.split(';');
-                for(var i = 0; i <ca.length; i++) {
-                  var c = ca[i];
-                  while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                  }
-                  if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                  }
-                }
-                return "";
-              }
 
             function save(uname,psw,fname,lname,email,dob,accepted) {
                 console.log('saving data for ' + uname);
                 createCookies(uname,psw,fname,lname,email,dob,accepted);
                 alert("Your account has been created!");
-                console.log(getCookie(uname));
-                window.location.href = "/";
             }
     
             </script>
