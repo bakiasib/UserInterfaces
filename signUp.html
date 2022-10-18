@@ -8,7 +8,7 @@
     <body>
         <div id="id02" class="modal" style="position:fixed">
   
-            <form class="modal-content animate" action="/action_page.php" method="post">
+            <form class="modal-content animate" action="index.html" method="post">
               <div class="imgcontainer">
                 <img src="images/logo.png" alt="Avatar" class="avatar">
               </div>
@@ -54,9 +54,17 @@
           <script>
     
             function createCookies(uname,psw,fname,lname,email,dob,accepted) {
+                const d = new Date();
+                d.setTime(d.getTime() + (1*24*60*60*1000));
+                let expires = "expires="+ d.toUTCString();
                 var list = [psw,fname,lname,email,dob,accepted];
-                document.cookie = "username=" + uname + ";" + list;
+                document.cookie = uname + "=" + list + ";" + expires + ";path=index.html";
                 return 
+            }
+
+            function save(uname,psw,fname,lname,email,dob,accepted) {
+                createCookies(uname,psw,fname,lname,email,dob,accepted);
+                alert("Your account has been created!");
             }
     
             </script>
