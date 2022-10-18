@@ -78,6 +78,7 @@
               }
 
             function save(uname,psw,fname,lname,email,dob,accepted) {
+                console.log('saving data for ' + uname);
                 createCookies(uname,psw,fname,lname,email,dob,accepted);
                 alert("Your account has been created!");
                 console.log(getCookie(uname));
