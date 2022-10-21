@@ -8,7 +8,7 @@
     <body>
         <div id="id02" class="modal" style="position:fixed">
   
-            <div class="modal-content animate">
+            <form class="modal-content animate" action="logIn.html" method="post">
               <div class="imgcontainer">
                 <img src="images/logo.png" alt="Avatar" class="avatar">
               </div>
@@ -47,7 +47,7 @@
     
               </div>
     
-            </div>
+            </form>
           </div>
        
     
@@ -66,7 +66,6 @@
                 console.log('saving data for ' + uname);
                 createCookies(uname,psw,fname,lname,email,dob,accepted);
                 alert("Your account has been created!");
-                window.location.href = "logIn.html";
             }
     
             </script>
