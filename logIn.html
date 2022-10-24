@@ -8,7 +8,7 @@
     <body>
         <div id="id01" class="modal" style="position:fixed">
   
-            <form class="modal-content animate">
+            <form class="modal-content animate" action="handleLogIn.js" method="post">
               <div class="imgcontainer">
                 <img src="images/logo.png" alt="Avatar" class="avatar">
               </div>
@@ -38,29 +38,37 @@
     
         <script>
 
-        function getCookie(cname, cpwd) {
-          var name = cname + "=";
-          var decodedCookie = decodeURIComponent(document.cookie);
-          var ca = decodedCookie.split(';');
-          for(var i = 0; i <ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') {
-              c = c.substring(1);
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) 
+                console.log(c.substring(nameEQ.length,c.length));
+                return c.substring(nameEQ.length,c.length);
             }
-            if (c.indexOf(name) == 0) {
-              var listName = c.substring(name.length, c.length);
-              var list = JSON.parse($.cookie(listName));
-                if (list[0] == cpwd) {
-                    return listName;
+            return null;
+        }
+
+        function checkCredentials(uname,psw) {
+            var username = getCookie(uname);
+            if(username.length > 0) {
+                var password = getCookie(psw);
+                if(password.length > 0) {
+                  var splitted = password.split("[,]");
+                  var pass = splitted[0];
+                  if(pass==psw) {
+                    return true;
+                  } 
                 }
             }
-          }
-          return "";
+            return false;
         }
 
         function checkCookie() {
-            var user=getCookie("username", "password");
-            if (user != "") {
+          var user = checkCredentials(document.getElementsByName("uname")[0].value, document.getElementsByName("psw")[0].value);
+            if (user) {
                 alert("Welcome again " + user);
             } else {
                  user = prompt("Username is invalid","");

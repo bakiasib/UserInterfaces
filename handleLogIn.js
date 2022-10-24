@@ -1,0 +1,1 @@
+window.alert('You are logged in!');
