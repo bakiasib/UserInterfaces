@@ -5,10 +5,57 @@
         <title>Log In</title>
         <link rel="stylesheet" href="style.css">
     </head>
+    <script>
+    
+      function createCookies(uname,psw,fname,lname,email,dob,accepted) {
+        console.log("creatig cookies")
+          const d = new Date();
+          d.setTime(d.getTime() + (1*24*60*60*1000));
+          let expires = "expires="+ d.toUTCString();
+          var list = [psw,fname,lname,email,dob,accepted];
+          document.cookie = uname + "=" + JSON.stringify(list) + ";" + expires + ";path=/";
+          return 
+      }
+          function getCookie(cname) {
+          let name = cname + "=";
+          let decodedCookie = decodeURIComponent(document.cookie);
+          let ca = decodedCookie.split(';');
+          for(let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+            }
+          }
+          return "";
+        }
+
+      function save() {
+          var uname = document.getElementsByName("uname")[0].value;
+          var psw = document.getElementsByName("psw")[0].value;
+          var fname = document.getElementsByName("fname")[0].value;
+          var lname = document.getElementsByName("lname")[0].value;
+          var email = document.getElementsByName("email")[0].value;
+          var dob = document.getElementsByName("dob")[0].value;
+          var accepted = document.getElementsByName("accepted")[0].value;
+          console.log('saving data for ' + uname);
+          createCookies(uname,psw,fname,lname,email,dob,accepted);
+          if(getCookie(uname) != null) {
+            console.log("cookie created");
+          }
+          else {
+            console.log("cookie not created");
+            return
+          }
+      }
+
+      </script>
     <body>
         <div id="id02" class="modal" style="position:fixed">
   
-            <form class="modal-content animate" action="logIn.html" method="post">
+            <form class="modal-content animate" action="javascript:window.location.href = 'logIn.html';"  method="post">
               <div class="imgcontainer">
                 <img src="images/logo.png" alt="Avatar" class="avatar">
               </div>
@@ -37,7 +84,7 @@
                     <input type="checkbox" checked="checked" name="accepted"> I've read and accepted the terms of use.
                   </label>
                   
-                <button type="submit" onclick=save(uname,psw,fname,lname,email,dob,accepted)>Save</button>
+                <button type="submit" onclick=save()>Save</button>
                 <button type="cancel">Delete</button>
                 <label>
                     <h4>Sign up with:</h4>
@@ -51,23 +98,6 @@
           </div>
        
     
-          <script>
-    
-            function createCookies(uname,psw,fname,lname,email,dob,accepted) {
-                const d = new Date();
-                d.setTime(d.getTime() + (1*24*60*60*1000));
-                let expires = "expires="+ d.toUTCString();
-                var list = [psw,fname,lname,email,dob,accepted];
-                document.cookie = uname + "=" + JSON.stringify(list) + ";" + expires + ";path=/";
-                return 
-            }
-
-            function save(uname,psw,fname,lname,email,dob,accepted) {
-                console.log('saving data for ' + uname);
-                createCookies(uname,psw,fname,lname,email,dob,accepted);
-                alert("Your account has been created!");
-            }
-    
-            </script>
+    </body>
           
 </html>
