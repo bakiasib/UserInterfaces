@@ -4,54 +4,14 @@
         <meta charset="UTF-8">
         <title>Log In</title>
         <link rel="stylesheet" href="style.css">
+        <script src="handleLogIn.js"></script>
+
     </head>
-        
-    <script>
-        function getCookie(cname) {
-          let name = cname + "=";
-          let decodedCookie = decodeURIComponent(document.cookie);
-          let ca = decodedCookie.split(';');
-          for(let i = 0; i <ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) == ' ') {
-              c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-              return c.substring(name.length, c.length);
-            }
-          }
-          return "";
-        }
 
-      function checkCredentials(uname,psw) {
-          var username = getCookie(uname);
-          if(username.length > 0) {
-            var list = JSON.parse(username);
-            if(list[0] == psw) {
-              console.log("correct password");
-              return true;
-            }
-            else {
-              console.log("incorrect password");
-              return false;
-            }
-      }
-      else {
-        console.log("username not found");
-        return false;
-      }
-      }
-
-      function checkCookie() {
-        var user = checkCredentials(document.getElementsByName("uname")[0].value, document.getElementsByName("psw")[0].value);
-      }
-
-
-          </script>
     <body>
         <div id="id01" class="modal" style="position:fixed">
   
-            <form class="modal-content animate" action="javascript:handleLogin.js" method="post">
+            <form class="modal-content animate" id="logIn-data" onSubmit="checkCookie(event)">
               <div class="imgcontainer">
                 <img src="images/logo.png" alt="Avatar" class="avatar">
               </div>

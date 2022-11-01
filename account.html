@@ -2,14 +2,18 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Sign Up</title>
+        <title>Account</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <script src="handleLogIn.js"></script>
+    <script>
+        window.onload = getAccountInfo;
+    </script>
+
     <body>
         <div id="id02" class="modal" style="position:fixed">
   
-          <form class="modal-content animate" id="user-data" onSubmit="save(event)" onCancel="clearInfo()">
+          <form class="modal-content animate" id="signUp" onSubmit="save(event)">
               <div class="imgcontainer">
                 <img src="images/logo.png" alt="Avatar" class="avatar">
               </div>
@@ -38,14 +42,8 @@
                     <input type="checkbox" checked="checked" id="accepted"> I've read and accepted the terms of use.
                   </label>
                   
-                <button type="submit">Sign Up</button>
-                <button type="cancel" onClick="clearInfo()">Clear</button>
-                <label>
-                    <h4>Sign up with:</h4>
-                    <img src="images/google.png" alt="google" class="google" style="width: 11%;cursor: pointer;position: relative;left: 35%;">
-                    <img src="images/facebook.png" alt="facebook" class="facebook" style="width: 11.7%;cursor: pointer; position: relative;left: 40%;">
-                 </label>
-    
+                <button type="submit">Update</button>
+                <button type="cancel">Cancel</button>
               </div>
     
             </form>
