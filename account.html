@@ -13,12 +13,10 @@
     <body>
         <div id="id02" class="modal" style="position:fixed">
   
-          <form class="modal-content animate" id="signUp" onSubmit="save(event)">
-              <div class="imgcontainer">
-                <img src="images/logo.png" alt="Avatar" class="avatar">
-              </div>
-          
+          <form class="modal-content animate" id="user-data" onSubmit="updateAccountInfo(event)" onCancel="window.location.replace('/loggedIn.html')">
+        
               <div class="container">
+
                 <label for="uname"><b>Username</b></label>
                 <input type="text" placeholder="Enter Username" id="uname" required>
           
@@ -27,8 +25,7 @@
     
                 <label for="fname"><b>First Name</b></label>
                 <input type="text" placeholder="Enter first name" id="fname" required>
-    
-    
+
                 <label for="lname"><b>Last Name</b></label>
                 <input type="text" placeholder="Enter last name" id="lname" required>
     
@@ -37,6 +34,9 @@
     
                 <label for="dob"><b>Date of Birth</b></label>
                 <input type="text" placeholder="Enter date of birth" id="dob" required>
+                <label for="profile-pic"><b>Profile Picture</b></label>
+                <input type="text" placeholder="Enter address of image you want as your profile picture" id="profile-pic">
+                  
     
                 <label>
                     <input type="checkbox" checked="checked" id="accepted"> I've read and accepted the terms of use.

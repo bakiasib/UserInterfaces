@@ -11,6 +11,10 @@
     
 
 </head>
+<script src="handleLogIn.js"></script>
+<script> 
+    window.onload = getProfilePic;
+</script>
 
 <!-- Major container representing display as a grid made of a left and a right column -->
 <div id="containerP" >
@@ -24,12 +28,15 @@
     <!-- Log in and sign up buttons located in second column -->
     <div id="header3"> 
 
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for...">
+
+
         <div id="profile-dropdown">
-            <button id="profile"> Profile</button>
+            <img id="profile" src="https://www.w3schools.com/howto/img_avatar.png">
             <div id="profile-dropdown-content">
                 <a href="account.html">Account</a>
                 <a href="profile.html">Profile</a>
-                <a href="index.html"  onclick="return confirm('Are you sure you want to logout?')">Logout</a>
+                <a onclick="logOut()">Logout</a>
             </div>
         </div>
         </div>
@@ -220,13 +227,6 @@
                         home
                     </span>
                     <p class="icon-label">Home</p>
-                </td>
-            </tr>
-            <tr>
-                <td> <span class="material-symbols-outlined">
-                        search
-                    </span>
-                    <p class="icon-label">Search</p>
                 </td>
             </tr>
             <tr>

@@ -1,10 +1,11 @@
 
-function createCookies(uname, psw, fname, lname, email, dob, accepted) {
+
+function createCookies(uname, psw, fname, lname, email, dob, accepted, profilePic) {
   console.log("creatig cookies")
   const d = new Date();
   d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
   let expires = "expires=" + d.toUTCString();
-  var list = [psw, fname, lname, email, dob, accepted];
+  var list = [psw, fname, lname, email, dob, accepted, profilePic];
   document.cookie = uname + "=" + JSON.stringify(list) + ";" + expires + ";path=/";
   return
 }
@@ -17,6 +18,13 @@ function createACookie(uname) {
   let expires = "expires=" + d.toUTCString();
   document.cookie = "loggedIn" + "=" + JSON.stringify(uname) + ";" + expires + ";path=/";
   return
+}
+
+function logOut() {
+  if(confirm("Are you sure you want to log out?")) {
+    document.cookie = "loggedIn=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    window.location.replace('/index.html')}
+  return;
 }
 
 
@@ -43,6 +51,7 @@ function clearInfo() {
   document.getElementById("email").value = "";
   document.getElementById("dob").value = "";
   document.getElementById("accepted").value = "";
+  document.getElementById("profile-pic").value = "";
 }
 
 function save(event) {
@@ -54,8 +63,9 @@ function save(event) {
   var email = document.getElementById("email").value;
   var dob = document.getElementById("dob").value;
   var accepted = document.getElementById("accepted").value;
+  var profilePic = document.getElementById("profile-pic").value;
   console.log('saving data for ' + uname);
-  createCookies(uname, psw, fname, lname, email, dob, accepted);
+  createCookies(uname, psw, fname, lname, email, dob, accepted, profilePic);
   if (getCookie(uname) != null) {
     console.log("cookie created");
     window.location.replace('/loggedIn.html')
@@ -64,6 +74,16 @@ function save(event) {
     console.log("cookie not created");
     return
   }
+}
+function updateAccountInfo(event){
+  save(event);
+  window.location.replace('/loggedIn.html')
+
+}
+function signUpUser(event){
+  save(event);
+  window.location.replace('/logIn.html')
+
 }
 
 function checkCredentials(uname, psw) {
@@ -110,9 +130,19 @@ function getAccountInfo() {
     document.getElementById("email").value = list[3];
     document.getElementById("dob").value = list[4];
     document.getElementById("accepted").value = list[5];
+    document.getElementById("profile-pic").value = list[6];
     }
-
   }
 
- 
+  function getProfilePic() {
+    var username = getCookie("loggedIn").replaceAll('"', '');
+    console.log(username);
+    if (username.length > 0) {
+      var accountInfo = getCookie(username);
+      var list = JSON.parse(accountInfo);
+      document.getElementById("profile").src =  list[6];
+      }
+    }
 
+
+  

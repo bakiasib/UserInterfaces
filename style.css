@@ -81,7 +81,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 100%;
     grid-template-areas:
-        ". . . profile-dropdown";
+        ". . my-input profile-dropdown";
 }
 
 .rowWrapper {
@@ -148,20 +148,16 @@
 
  
 #profile {
-    background-color: brown;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
     border: none;
     position: absolute;
     left: 40%;
+    height: 100%;
 }
 
 #profile-dropdown {
     grid-area: profile-dropdown;
     position: relative;
     display: inline-block;
-    top: 40%;
 }
 
 #profile-dropdown-content{
@@ -171,8 +167,8 @@
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    top: 83%;
-    left: 41%;
+    top: 98%;
+    left: 17%;
 }
 
 #profile-dropdown-content a {
@@ -186,9 +182,20 @@
 
 #profile-dropdown-content a:hover {background-color: #ddd;}
 #profile-dropdown:hover #profile-dropdown-content {display: block;}
-#profile-dropdown:hover #profile {background-color: lightcoral;}
-
-
+#myInput {
+    grid-area: my-input;
+    background-position: left;
+    background-size: 14%;
+    background-repeat: no-repeat;
+    background-position-x: 7%;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 9px 11px 71px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    background-image: url(https://cdn.pixabay.com/photo/2017/01/13/01/22/magnifying-glass-1976105_1280.png);
+    background-blend-mode: difference;
+}
 #sidebar {
     grid-area: sidebar;
     display: grid;
