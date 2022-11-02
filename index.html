@@ -208,7 +208,7 @@
     <div id="sidebar">
         <table class="menu-items" style="grid-area:tab1;">
             <tr>
-                <td>
+                <td onClick="window.location.replace('/loggedIn.html')" style="cursor:pointer;">
                     <span class="material-symbols-outlined">
                         home
                     </span>
@@ -216,29 +216,18 @@
                 </td>
             </tr>
             <tr>
-                <td> <span class="material-symbols-outlined">
-                        search
-                    </span>
-                    <p class="icon-label">Search</p>
-                </td>
-            </tr>
-            <tr>
-                <td> <span class="material-symbols-outlined">
+                <td onClick="window.location.replace('/playlists.html')" style="cursor:pointer;">
+                    <span class="material-symbols-outlined">
                         library_music
                     </span>
                     <p class="icon-label">Playlists</p>
             </tr>
             <tr>
-                <td> <span class="material-symbols-outlined">
+                <td onClick="window.location.replace('/createPlaylists.html')" style="cursor:pointer;">
+                    <span class="material-symbols-outlined">
                         library_add
                     </span>
                     <p class="icon-label">Create Playlist</p>
-            </tr>
-            <tr>
-                <td> <span class="material-symbols-outlined">
-                        settings
-                    </span>
-                    <p class="icon-label">Settings</p>
             </tr>
         </table>
 
