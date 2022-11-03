@@ -165,4 +165,12 @@ function getAccountInfo3() {
   getProfilePic();
 }
 
+function audioControl(song, path, image){
+  document.getElementById("footer-welcome-message").style.display = "none";
+  document.getElementById("footer-audio").style.display = "grid";
+  document.getElementById("footer-img").src = image;
+  document.getElementById("footer-song-name").innerHTML = song;
+  document.getElementById("song").src = path;
+  document.getElementById("song").play();
+}
   

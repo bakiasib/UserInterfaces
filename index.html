@@ -11,6 +11,7 @@
     
 
 </head>
+<script src="handleLogIn.js"></script>
 
 <!-- Major container representing display as a grid made of a left and a right column -->
 <div id="container1" >
@@ -37,12 +38,8 @@
             </div>
             <div class="flex-container">
                 <div class="album-img"> <img src="images/Midnights(3am Edition).png" width="150" height="150">
-                    <audio id="sound1" src="music/sound.mp3" preload="auto"></audio>
-                    <button type="button" class="btn" onclick="document.getElementById('sound1').play();">
+                    <button type="button" class="btn" onclick="audioControl('Midnights - Taylor Swift','music/sound.mp3', 'images/Midnights(3am Edition).png' )">
                         <span class="material-symbols-outlined">play_arrow</span>
-                    </button>
-                    <button type="button" class="btn-pause" onclick="document.getElementById('sound1').pause();">
-                        <span class="material-symbols-outlined">pause</span>
                     </button>
                     <p> Midnights - Taylor Swift </p>
                 </div>
@@ -242,9 +239,19 @@
 
     <!-- Footer with a welcome message to the users -->
     <footer>
-        <p style="color:rgb(29, 29, 30);"> Welcome to Gride! Here you can stream free music as well as create your own
+        <p id="footer-welcome-message" style="color:rgb(29, 29, 30);"> Welcome to Gride! Here you can stream free music as well as create your own
             playlists or listen to the ones we have created for you. </p>
+
+        <div id="footer-audio">
+            <audio controls preload="auto" id="song">
+                <source src="" type="audio/mpeg" id="audio-control-source">
+            </audio>
+
+            <img id="footer-img" src="" alt="Album cover" width="10%" >
+            <p id="footer-song-name"></p>
+            </div>
     </footer>
+
 
 </div>
 </html>

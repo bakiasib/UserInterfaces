@@ -1,4 +1,46 @@
 
+#footer-audio {
+    display: none;
+    position: relative;
+    align-items: center;
+    grid-auto-flow: row;
+    grid-template-columns: unset;
+    grid-template-rows: unset;
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1f 1f 1f ;
+    grid-template-rows: 1f;
+    grid-template-areas:
+        "footer-img footer-song-name song"
+}
+
+#song {
+    grid-area: song;
+    position: absolute;
+    height: 70%;
+    top: 20%;
+    left: 36%;
+}
+#footer-img{
+    grid-area: footer-img;
+    position: absolute;
+    height: 100%;
+    left: 0%;
+    width: auto;
+    top: 0%;
+}
+
+#footer-song-name {
+    grid-area: footer-song-name;
+    position: absolute;
+    left: 5%;
+    top: 2%;
+    font-family: serif;
+    font-size: larger;
+}
+
+
 #container1 {
     display: grid;
     overflow: hidden;
@@ -221,11 +263,9 @@
 }
 
 footer {
-    padding: 2%;
     grid-area: footer;
     text-align: center;
     background: rgba(226, 224, 224, 0.903);
-    height: fit-content;
 }
 
 @media (max-width:700px) {
@@ -415,4 +455,4 @@ input[type=text], input[type=password]{
 
 }
 
-    
+
