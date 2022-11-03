@@ -61,7 +61,7 @@
 
                     <h2 id="username" style="padding: 4% 5% 5% 5% ;font-weight: 400; margin-left: 12%;margin-top: -15%;"></h2>
                     <p style="margin-left: 17%;margin-top: -6%;"> Playlists: 5 </p>
-                    <p style="margin-left: 17%;margin-top: 0%; padding-bottom: 6%;">  Followers: 3</p>
+                    <p style="margin-left: 17%;margin-top: 0%; padding-bottom: 6%;">  Followers: 1</p>
 
             </div>
             <div class="flex-container">
@@ -70,49 +70,112 @@
 
             <div class="main-headers">
 
-                <!-- First playlist -->
-                <h2 style="padding: 5%;  font-weight: 400;  margin-top: 0%;">Most listened to artists</h2>
+                <!-- Top artists from the month -->
+                <h2 style="padding: 5%;  font-weight: 400;  margin-top: 0%;">Your top artists this month</h2>
+                <p1 style="padding: 5%;  font-weight: 400;  margin-top: 0%;">Only visible to you</p1>
             </div>
             <div class="flex-container">
                 <div class="album-img"> 
-                    <img src="images/BackInBlack.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
+                    <img src="images/frankocean.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
                     cursor: pointer;
                 ">
-                    <p>AC/DC</p>
+                    <p>Frank Ocean</p>
                 </div>
                     <div class="album-img"> 
-                        <img src="images/BackInBlack.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
+                        <img src="images/future.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
                         cursor: pointer;
                     ">
-                        <p>The Weekend</p>
+                        <p>Future</p>
                     </div>
     
                     <div class="album-img"> 
-                        <img src="images/BackInBlack.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
+                        <img src="images/tylerthecreator.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
                         cursor: pointer;
                     ">
-                        <p>Tame Impala</p>
+                        <p>Tyler The Creator</p>
                     </div>
                     <div class="album-img"> 
-                        <img src="images/BackInBlack.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
+                        <img src="images/journey.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
                         cursor: pointer;
                     ">
-                        <p>Gorillaz</p>
+                        <p>Journey</p>
                     </div>
                     <div class="album-img"> 
-                        <img src="images/BackInBlack.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
+                        <img src="images/gunna.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
                         cursor: pointer;
                     ">
-                        <p>Frank Ocean</p>
+                        <p>Gunna</p>
                     </div>
             </div>
+                        <!-- User playlists -->
+                        <div class="main-headers">
+                            <h2 style="padding: 5%;  font-weight: 400;   margin: 0%;">Playlists</h2>
+                        </div>
+                        <div class="flex-container">
+                            <div class="album-img"> <img src="images/playlist1.webp" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
+                                cursor: pointer;">
+                                <audio id="sound11" src="music/s12.mp3" preload="auto"></audio>
+                                <button type="button" class="btn" onclick="document.getElementById('sound11').play();">
+                                    <span class="material-symbols-outlined">play_arrow</span>
+                                </button>
+                                <button type="button" class="btn-pause" onclick="document.getElementById('sound11').pause();">
+                                    <span class="material-symbols-outlined">pause</span>
+                                </button>
+                                <p> The Crank </p>
+                            </div>
+                            <div class="album-img"> <img src="images/playlist2.webp" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
+                                cursor: pointer;">
+                                <audio id="sound12" src="music/s13.mp3" preload="auto"></audio>
+                                <button type="button" class="btn" onclick="document.getElementById('sound12').play();">
+                                    <span class="material-symbols-outlined">play_arrow</span>
+                                </button>
+                                <button type="button" class="btn-pause" onclick="document.getElementById('sound12').pause();">
+                                    <span class="material-symbols-outlined">pause</span>
+                                </button>
+                                <p> Work Out </p>
+                            </div>
+                            <div class="album-img"> <img src="images/playlist3.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
+                                cursor: pointer;">
+                                <audio id="sound13" src="music/s14.mp3" preload="auto"></audio>
+                                <button type="button" class="btn" onclick="document.getElementById('sound13').play();">
+                                    <span class="material-symbols-outlined">play_arrow</span>
+                                </button>
+                                <button type="button" class="btn-pause" onclick="document.getElementById('sound13').pause();">
+                                    <span class="material-symbols-outlined">pause</span>
+                                </button>
+                                <p> Pain. </p>
+                            </div>
+                            <div class="album-img"> <img src="images/playlist4.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
+                                cursor: pointer;">
+                                <audio id="sound14" src="music/s14.mp3" preload="auto"></audio>
+                                <button type="button" class="btn" onclick="document.getElementById('sound14').play();">
+                                    <span class="material-symbols-outlined">play_arrow</span>
+                                </button>
+                                <button type="button" class="btn-pause" onclick="document.getElementById('sound14').pause();">
+                                    <span class="material-symbols-outlined">pause</span>
+                                </button>
+                                <p> Late Night Vibes </p>
+                            </div>
+                            <div class="album-img"> <img src="images/playlist5.png" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
+                                cursor: pointer;">
+                                <audio id="sound15" src="music/s15.mp3" preload="auto"></audio>
+                                <button type="button" class="btn" onclick="document.getElementById('sound15').play();">
+                                    <span class="material-symbols-outlined">play_arrow</span>
+                                </button>
+                                <button type="button" class="btn-pause" onclick="document.getElementById('sound15').pause();">
+                                    <span class="material-symbols-outlined">pause</span>
+                                </button>
+                                <p> Rock & Roll </p>
+                            </div>
+                        </div>
+            
 
-             <!-- Second playlist -->
+             <!-- Top songs from the month -->
             <div class="main-headers">
-                <h2 style="padding: 5%;  font-weight: 400;  margin: 0%;">Most played songs</h2>
+                <h2 style="padding: 5%;  font-weight: 400;  margin: 0%;">Your top songs this month </h2>
             </div>
             <div class="flex-container">
-                <div class="album-img"> <img src="images/MBDTF.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/creep.jpeg" width="150" height="150">
                     <audio id="sound6" src="music/s5.mp3" preload="auto"></audio>
                     <button type="button" class="btn" onclick="document.getElementById('sound6').play();">
                         <span class="material-symbols-outlined">play_arrow</span>
@@ -120,9 +183,9 @@
                     <button type="button" class="btn-pause" onclick="document.getElementById('sound6').pause();">
                         <span class="material-symbols-outlined">pause</span>
                     </button>
-                    <p> Runaway by Kanye West, Pusha T 2010 </p>
+                    <p> Creep - Radiohead </p>
                 </div>
-                <div class="album-img"> <img src="images/Starboy.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/OnlyBuiltForInfinityLinks.png" width="150" height="150">
                     <audio id="sound7" src="music/s6.mp3" preload="auto"></audio>
                     <button type="button" class="btn" onclick="document.getElementById('sound7').play();">
                         <span class="material-symbols-outlined">play_arrow</span>
@@ -130,9 +193,9 @@
                     <button type="button" class="btn-pause" onclick="document.getElementById('sound7').pause();">
                         <span class="material-symbols-outlined">pause</span>
                     </button>
-                    <p> Starboy by The Weeknd, Daft Punk, 2016 </p>
+                    <p> Chocolate - Quavo, Takeoff, Young Thug, Gunna </p>
                 </div>
-                <div class="album-img"> <img src="images/flowerboy.webp" width="150" height="150">
+                <div class="album-img"> <img src="images/sweetdreams.jpeg" width="150" height="150">
                     <audio id="sound8" src="music/s7.mp3" preload="auto"></audio>
                     <button type="button" class="btn" onclick="document.getElementById('sound8').play();">
                         <span class="material-symbols-outlined">play_arrow</span>
@@ -140,9 +203,9 @@
                     <button type="button" class="btn-pause" onclick="document.getElementById('sound8').pause();">
                         <span class="material-symbols-outlined">pause</span>
                     </button>
-                    <p> See You Again by Tyler the Creator (feat. Kali Uchis) 2017 </p>
+                    <p> Sweet Dreams (Are Made of This) - Eurythmics </p>
                 </div>
-                <div class="album-img"> <img src="images/DemonDays.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/aloneatprom.jpeg" width="150" height="150">
                     <audio id="sound9" src="music/s8.mp3" preload="auto"></audio>
                     <button type="button" class="btn" onclick="document.getElementById('sound9').play();">
                         <span class="material-symbols-outlined">play_arrow</span>
@@ -150,9 +213,9 @@
                     <button type="button" class="btn-pause" onclick="document.getElementById('sound9').pause();">
                         <span class="material-symbols-outlined">pause</span>
                     </button>
-                    <p> Feel Good Inc. by Gorillaz 2005 </p>
+                    <p> The Color Violet - Tory Lanez </p>
                 </div>
-                <div class="album-img"> <img src="images/Stankonia.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/faithfully.jpeg" width="150" height="150">
                     <audio id="sound10" src="music/s11.mp3" preload="auto"></audio>
                     <button type="button" class="btn" onclick="document.getElementById('sound10').play();">
                         <span class="material-symbols-outlined">play_arrow</span>
@@ -160,16 +223,16 @@
                     <button type="button" class="btn-pause" onclick="document.getElementById('sound10').pause();">
                         <span class="material-symbols-outlined">pause</span>
                     </button>
-                    <p> Ms. Jackson by Outkast 2000 </p>
+                    <p> Faithfully - Journey </p>
                 </div>
             </div>
                 
-            <!-- Third playlist -->
+            <!-- Liked songs -->
             <div class="main-headers">
                 <h2 style="padding: 5%;  font-weight: 400;   margin: 0%;">Songs liked</h2>
             </div>
             <div class="flex-container">
-                <div class="album-img"> <img src="images/LicensedToiLL.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/channelorange.jpg" width="150" height="150">
                     <audio id="sound11" src="music/s12.mp3" preload="auto"></audio>
                     <button type="button" class="btn" onclick="document.getElementById('sound11').play();">
                         <span class="material-symbols-outlined">play_arrow</span>
@@ -177,9 +240,9 @@
                     <button type="button" class="btn-pause" onclick="document.getElementById('sound11').pause();">
                         <span class="material-symbols-outlined">pause</span>
                     </button>
-                    <p> Fight For Your Right by Beastie Boys 1986 </p>
+                    <p> Lost - Frank Ocean </p>
                 </div>
-                <div class="album-img"> <img src="images/Currents.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/faithfully.jpeg" width="150" height="150">
                     <audio id="sound12" src="music/s13.mp3" preload="auto"></audio>
                     <button type="button" class="btn" onclick="document.getElementById('sound12').play();">
                         <span class="material-symbols-outlined">play_arrow</span>
@@ -187,9 +250,9 @@
                     <button type="button" class="btn-pause" onclick="document.getElementById('sound12').pause();">
                         <span class="material-symbols-outlined">pause</span>
                     </button>
-                    <p> The Less I Know The Better by Tame Impala 2015 </p>
+                    <p> Faithfully - Journey </p>
                 </div>
-                <div class="album-img"> <img src="images/TheLowEndTheory.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/Wunna.png" width="150" height="150">
                     <audio id="sound13" src="music/s14.mp3" preload="auto"></audio>
                     <button type="button" class="btn" onclick="document.getElementById('sound13').play();">
                         <span class="material-symbols-outlined">play_arrow</span>
@@ -197,7 +260,7 @@
                     <button type="button" class="btn-pause" onclick="document.getElementById('sound13').pause();">
                         <span class="material-symbols-outlined">pause</span>
                     </button>
-                    <p> Check the Rhime by A Tribe Called Quest 1991 </p>
+                    <p> Blindfold - Gunna, Lil Baby </p>
                 </div>
                 <div class="album-img"> <img src="images/Blond.jpeg" width="150" height="150">
                     <audio id="sound14" src="music/s14.mp3" preload="auto"></audio>
@@ -207,9 +270,9 @@
                     <button type="button" class="btn-pause" onclick="document.getElementById('sound14').pause();">
                         <span class="material-symbols-outlined">pause</span>
                     </button>
-                    <p> Ivy by Frank Ocean 2016 </p>
+                    <p> Pink + White - Frank Ocean </p>
                 </div>
-                <div class="album-img"> <img src="images/Yeezus.jpeg" width="150" height="150">
+                <div class="album-img"> <img src="images/openarms.jpg" width="150" height="150">
                     <audio id="sound15" src="music/s15.mp3" preload="auto"></audio>
                     <button type="button" class="btn" onclick="document.getElementById('sound15').play();">
                         <span class="material-symbols-outlined">play_arrow</span>
@@ -217,71 +280,10 @@
                     <button type="button" class="btn-pause" onclick="document.getElementById('sound15').pause();">
                         <span class="material-symbols-outlined">pause</span>
                     </button>
-                    <p> Bound 2 by Kanye West 2013</p>
+                    <p> Open Arms - Journey</p>
                 </div>
             </div>
-            <!-- Third playlist -->
-            <div class="main-headers">
-                <h2 style="padding: 5%;  font-weight: 400;   margin: 0%;">Playlists</h2>
-            </div>
-            <div class="flex-container">
-                <div class="album-img"> <img src="images/LicensedToiLL.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
-                    cursor: pointer;">
-                    <audio id="sound11" src="music/s12.mp3" preload="auto"></audio>
-                    <button type="button" class="btn" onclick="document.getElementById('sound11').play();">
-                        <span class="material-symbols-outlined">play_arrow</span>
-                    </button>
-                    <button type="button" class="btn-pause" onclick="document.getElementById('sound11').pause();">
-                        <span class="material-symbols-outlined">pause</span>
-                    </button>
-                    <p> Lofi </p>
-                </div>
-                <div class="album-img"> <img src="images/Currents.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
-                    cursor: pointer;">
-                    <audio id="sound12" src="music/s13.mp3" preload="auto"></audio>
-                    <button type="button" class="btn" onclick="document.getElementById('sound12').play();">
-                        <span class="material-symbols-outlined">play_arrow</span>
-                    </button>
-                    <button type="button" class="btn-pause" onclick="document.getElementById('sound12').pause();">
-                        <span class="material-symbols-outlined">pause</span>
-                    </button>
-                    <p> Gym  </p>
-                </div>
-                <div class="album-img"> <img src="images/TheLowEndTheory.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
-                    cursor: pointer;">
-                    <audio id="sound13" src="music/s14.mp3" preload="auto"></audio>
-                    <button type="button" class="btn" onclick="document.getElementById('sound13').play();">
-                        <span class="material-symbols-outlined">play_arrow</span>
-                    </button>
-                    <button type="button" class="btn-pause" onclick="document.getElementById('sound13').pause();">
-                        <span class="material-symbols-outlined">pause</span>
-                    </button>
-                    <p> Pop </p>
-                </div>
-                <div class="album-img"> <img src="images/Blond.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
-                    cursor: pointer;">
-                    <audio id="sound14" src="music/s14.mp3" preload="auto"></audio>
-                    <button type="button" class="btn" onclick="document.getElementById('sound14').play();">
-                        <span class="material-symbols-outlined">play_arrow</span>
-                    </button>
-                    <button type="button" class="btn-pause" onclick="document.getElementById('sound14').pause();">
-                        <span class="material-symbols-outlined">pause</span>
-                    </button>
-                    <p> EDM </p>
-                </div>
-                <div class="album-img"> <img src="images/Yeezus.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
-                    cursor: pointer;">
-                    <audio id="sound15" src="music/s15.mp3" preload="auto"></audio>
-                    <button type="button" class="btn" onclick="document.getElementById('sound15').play();">
-                        <span class="material-symbols-outlined">play_arrow</span>
-                    </button>
-                    <button type="button" class="btn-pause" onclick="document.getElementById('sound15').pause();">
-                        <span class="material-symbols-outlined">pause</span>
-                    </button>
-                    <p> Rock </p>
-                </div>
-            </div>
-            <!-- Third playlist -->
+            <!-- Followers -->
             
             <div class="main-headers">
                 <h2 style="padding: 5%;  font-weight: 400;  margin-top: 0%;">Followers</h2>
@@ -295,7 +297,7 @@
                     <p>denib</p>
                 </div>
                     <div class="album-img"> 
-                        <img src="images/BackInBlack.jpeg" width="150" height="150" onclick="window.location.replace('/denib.html')" style="
+                        <img src="images/nickmusic.jpeg" width="150" height="150" onclick="window.location.replace('/denib.html')" style="
                         cursor: pointer;
                         border-radius: 50%;
                     ">
@@ -303,14 +305,14 @@
                     </div>
     
                     <div class="album-img"> 
-                        <img src="images/BackInBlack.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
+                        <img src="images/saraworld.png" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
                         cursor: pointer;
                         border-radius: 50%;
                     ">
                         <p>saraworld</p>
                     </div>
                     <div class="album-img"> 
-                        <img src="images/BackInBlack.jpeg" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
+                        <img src="images/john123.webp" width="150" height="150" onclick="window.location.replace('/acdc.html')" style="
                         cursor: pointer;
                         border-radius: 50%;
                     ">
