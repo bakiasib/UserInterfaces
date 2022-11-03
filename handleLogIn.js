@@ -141,9 +141,11 @@ function getAccountInfo() {
       var accountInfo = getCookie(username);
       var list = JSON.parse(accountInfo);
       document.getElementById("profile").src =  list[6];
+      if(document.getElementById("profile2") != null){
       document.getElementById("profile2").src =  list[6];
       }
     }
+  }
 
     function getUsername() {
       var username = getCookie("loggedIn").replaceAll('"', '');
@@ -158,5 +160,9 @@ function getAccountInfo2() {
   getUsername();
 }
 
+function getAccountInfo3() {
+  getAccountInfo();
+  getProfilePic();
+}
 
   

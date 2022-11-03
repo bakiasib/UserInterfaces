@@ -1,6 +1,7 @@
 
 #container1 {
     display: grid;
+    overflow: hidden;
     height: 100vh;
     grid-template-columns: 11% 89%;
     grid-template-rows: 10% 2% 80% 2% 6%;
@@ -14,6 +15,7 @@
 #containerP {
     display: grid;
     height: 100vh;
+    overflow: hidden;
     grid-template-columns: 11% 89%;
     grid-template-rows: 10% 2% 80% 2% 6%;
     grid-template-areas:
@@ -152,6 +154,7 @@
     position: absolute;
     left: 40%;
     height: 87%;
+    border-radius: 50%;
 }
 
 #profile-dropdown {
