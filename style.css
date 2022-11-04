@@ -14,9 +14,6 @@
     grid-template-areas:
         "footer-img footer-song-name song"
 }
-
-
-
 #song {
     grid-area: song / song / song / song;
     position: absolute;
@@ -43,7 +40,6 @@
     margin: 25px 40px;
 }
 
-
 #container1 {
     display: grid;
     overflow: hidden;
@@ -63,7 +59,7 @@
     overflow: hidden;
     grid-template-columns: 11% 89%;
     grid-template-rows: 10% 2% 78% 2% 7%;
-    grid-template-areas:
+        grid-template-areas:
         "header header3"
         ". ."
         "sidebar main-section"

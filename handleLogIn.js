@@ -1,4 +1,36 @@
+function countdown(releaseDate,id){
+  var countDownDate = new Date(releaseDate).getTime();
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById(id).innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("demo").innerHTML = "RELEASED";
+    }
+  }, 1000);
+  }
+  
+    function logInIndex(){
+      var loggedIn = getCookie("loggedIn").length > 2;
 
+      if (loggedIn) {
+          window.onload = getProfilePic;
+          for (var i = 0; i < document.getElementsByClassName("not-logged-in").length; i++) {
+              document.getElementsByClassName("not-logged-in")[i].style.display = "none";
+          }
+      }
+      if (!loggedIn) {
+          for (var i = 0; i < document.getElementsByClassName("logged-in").length; i++) {
+              document.getElementsByClassName("logged-in")[i].style.display = "none";
+          }
+      }
+  }
 
 function createCookies(uname, psw, fname, lname, email, dob, accepted, profilePic) {
   console.log("creatig cookies")
@@ -82,7 +114,6 @@ function updateAccountInfo(event){
 }
 function signUpUser(event){
   save(event);
-  window.location.replace('/logIn.html')
 
 }
 
@@ -111,7 +142,10 @@ function checkCookie(event) {
   if (user == true) {
     console.log("user found");
     createACookie(document.getElementsByName("uname")[0].value);
+
     window.location.replace('/index.html')
+    logInIndex();
+    return 
   } else {
     console.log("user not found");
     return;
