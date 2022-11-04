@@ -68,7 +68,7 @@ function save(event) {
   createCookies(uname, psw, fname, lname, email, dob, accepted, profilePic);
   if (getCookie(uname) != null) {
     console.log("cookie created");
-    window.location.replace('/loggedIn.html')
+    window.location.replace('/index.html')
   }
   else {
     console.log("cookie not created");
@@ -77,7 +77,7 @@ function save(event) {
 }
 function updateAccountInfo(event){
   save(event);
-  window.location.replace('/loggedIn.html')
+  window.location.replace('/index.html')
 
 }
 function signUpUser(event){
@@ -111,7 +111,7 @@ function checkCookie(event) {
   if (user == true) {
     console.log("user found");
     createACookie(document.getElementsByName("uname")[0].value);
-    window.location.replace('/loggedIn.html')
+    window.location.replace('/index.html')
   } else {
     console.log("user not found");
     return;
@@ -124,13 +124,13 @@ function getAccountInfo() {
   if (username.length > 0) {
     var accountInfo = getCookie(username);
     var list = JSON.parse(accountInfo);
-    document.getElementById("uname").value = username;
-    document.getElementById("fname").value = list[1];
-    document.getElementById("lname").value = list[2];
-    document.getElementById("email").value = list[3];
-    document.getElementById("dob").value = list[4];
-    document.getElementById("accepted").value = list[5];
-    document.getElementById("profile-pic").value = list[6];
+    document.getElementById("uname1").value = username;
+    document.getElementById("fname1").value = list[1];
+    document.getElementById("lname1").value = list[2];
+    document.getElementById("email1").value = list[3];
+    document.getElementById("dob1").value = list[4];
+    document.getElementById("accepted1").value = list[5];
+    document.getElementById("profile-pic1").value = list[6];
     }
   }
 
@@ -155,15 +155,6 @@ function getAccountInfo() {
         }
       }
 
-function getAccountInfo2() {
-  getProfilePic();
-  getUsername();
-}
-
-function getAccountInfo3() {
-  getAccountInfo();
-  getProfilePic();
-}
 
 function audioControl(song, path, image){
   document.getElementById("footer-welcome-message").style.display = "none";
@@ -173,4 +164,28 @@ function audioControl(song, path, image){
   document.getElementById("song").src = path;
   document.getElementById("song").play();
 }
-  
+
+function changeFill(id){
+  console.log(document.getElementById(id + "-song"));
+
+  var opt2 = '"FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48';
+  var opt3 = '"FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48';
+  if(document.getElementById(id).style.fontVariationSettings == opt3){ 
+    document.getElementById(id).style.fontVariationSettings = opt2;
+    document.getElementById(id + "-song").style.display = "block";
+    console.log(document.getElementById(id + "-song"));
+    return
+  }
+  if(document.getElementById(id).style.fontVariationSettings == opt2){
+    document.getElementById(id).style.fontVariationSettings = opt3;
+    document.getElementById(id + "-song").style.display = "none";
+    console.log(document.getElementById(id + "-song"));
+    return 
+  }
+    document.getElementById(id).style = "font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;";
+    document.getElementById(id + "-song").style.display = "block";
+    return 
+
+}
+
+ 
