@@ -1243,7 +1243,7 @@
                 </div>
         </section>
 
-        <section id="denib" class="user" style="display: none;">
+        <section id="denib" class="artist" style="display: none;">
             <div class="main-headers">
                 <div class="profile-info" style="
                 background: #3f3e3e0f;
@@ -1569,6 +1569,9 @@
 
     function navDropDown(option) {
         document.getElementById("main-section").scrollTop = 0;
+        for (var i = 0; i < document.getElementsByClassName("artist").length; i++) {
+            document.getElementsByClassName("artist")[i].style.display = "none";
+        }
         if (option == "profile") {
             document.getElementById("playlists-loggedIn").style.display = "none";
             document.getElementById("id02").style.display = "none";
