@@ -338,7 +338,8 @@
                 <h2 style="padding: 5%;  font-weight: 400;  margin: 0%;">Jump back in </h2>
             </div>
             <div class="flex-container">
-                <div class="album-img"> <img src="images/MBDTF.jpeg" width="150" height="150">
+                <div class="album-img"> 
+                    <img src="images/MBDTF.jpeg" width="150" height="150">
                     <button type="button" class="btn"
                         onclick="audioControl('Runaway by Kanye West, Pusha T','music/s5.mp3', 'images/MBDTF.jpeg' )">
                         <span class="material-symbols-outlined">play_arrow</span>
@@ -550,7 +551,7 @@
                 <div class="main-headers">
                     <h2 style="padding: 5%;  font-weight: 400;   margin: 0%;">Playlists</h2>
                 </div>
-                <div class="flex-container">
+                <div class="playlists-flex-container">
                     <div class="album-img"> <img src="images/playlist1.webp" width="150" height="150"
                             onclick="navArtist('acdc')" style="
                                 cursor: pointer;">
@@ -1579,10 +1580,18 @@
 
                 <div class="main-headers">
                     <!-- User playlists -->
-                    <div class="main-headers">
+                    <div class="main-headers" >
                         <h2 style="padding: 5%;  font-weight: 400;   margin: 0%;">Playlists</h2>
                     </div>
-                    <div class="flex-container" id="playlists-div">
+
+
+                    <div class="playlists-flex-container" id="playlists-div">
+                        <div class="album-img" id="empty-playlist" style="display: none"> 
+                            <img src="images/playlist1.webp" width="150" height="150"
+                            onclick="navArtist('acdc')" style="
+                            cursor: pointer;">
+                        <p>  </p>
+                    </div>
                         <div class="album-img"> <img src="images/playlist1.webp" width="150" height="150"
                                 onclick="navArtist('acdc')" style="
                                 cursor: pointer;">
@@ -1615,15 +1624,42 @@
                     </div>
         </section>
 
+        <section id="empty-page" class="logged-in" style="display: none;">
+            <div class="main-headers">
+                <div class="profile-info" style="
+                background: #3f3e3e0f;
+                border-style: inset;
+                /* position: absolute; */
+            ">
+                    <p id="page-tittle" style="font-weight: 400;margin-left: 17%;position: relative;top: 40px;">
+                        </p>
+
+                    <img id="page-img" src="https://www.w3schools.com/howto/img_avatar.png" style="
+                    width: 14%;
+                    margin-left: 3%;
+                    border-radius: 50%;
+                ">
+
+                    <h2 id="page"
+                        style="padding: 4% 5% 5% 5% ;font-weight: 400; margin-left: 12%;margin-top: -15%;"></h2>
+                    <p style="margin-left: 17%;margin-top: -6%;"> </p>
+
+                </div>
+                <div class="flex-container"> </div>
+                    <div class="playlists-flex-container-2" id="empty-page-div">
+                </div>
+            </div>
+        </section>
+
         <div id="id04" class="modal">
 
 
-            <form class="modal-content animate" id="playlist-data" onSubmit="signUpUser(event)" onCancel="clearInfo()">
+            <form class="modal-content animate" id="playlist-data" onSubmit="addNewPlaylist(event)">
                 <div class="imgcontainer">
                     <img src="images/logo.png" alt="Avatar" class="avatar">
                 </div>
 
-                <div class="container" style="
+                <div class="container" id="container-songs" style="
               font-family: sans-serif;
           ">
                     <label for="playlist-tittle"><b>Playlist title</b></label>
@@ -1640,8 +1676,9 @@
                         <ul id="myUL-songs"></ul>
                     </div>
 
-                    <button type="submit">Create</button>
-                    <button type="cancel" onClick="clearInfo()">Cancel</button>
+                    <div id="list-of-chosen" class="flex-container"></div>
+
+                    <button class="btn-playlist" type="submit">Create</button>
                 </div>
 
             </form>
@@ -1735,63 +1772,8 @@
 
 
 
-    function navDropDown(option) {
-        document.getElementById("main-section").scrollTop = 0;
 
-        for (var i = 0; i < document.getElementsByClassName("artist").length; i++) {
-            document.getElementsByClassName("artist")[i].style.display = "none";
-        }
-        document.getElementById("playlists-list").style.display = "none";
-        document.getElementById("id04").style.display = "none";
-        document.getElementById("playlists-loggedIn").style.display = "none";
-
-
-        if (option == "profile") {
-            document.getElementById("id02").style.display = "none";
-            document.getElementById("profile-playlists").style.display = "block";
-            getUsername();
-        }
-        if (option == "account") {
-            document.getElementById("profile-playlists").style.display = "none";
-            document.getElementById("id02").style.display = "block";
-            getAccountInfo();
-        }
-
-    }
-
-    function navigateSideBar(page) {
-
-        if (getCookie("loggedIn").length < 2) {
-            alert("You need to be logged in to access this page");
-            return;
-        }
-        document.getElementById("main-section").scrollTop = 0;
-
-        for (var i = 0; i < document.getElementsByClassName("artist").length; i++) {
-            document.getElementsByClassName("artist")[i].style.display = "none";
-        }
-        document.getElementById("profile-playlists").style.display = "none";
-        document.getElementById("id02").style.display = "none";
-
-        if (page == "home") {
-            document.getElementById("id04").style.display = "none";
-            document.getElementById("playlists-list").style.display = "none";
-            document.getElementById("playlists-loggedIn").style.display = "block";
-
-            return;
-        } else if (page == "playlists") {
-            document.getElementById("playlists-loggedIn").style.display = "none";
-            document.getElementById("id04").style.display = "none";
-            document.getElementById("playlists-list").style.display = "block";
-
-            return
-        } else if (page == "create") {
-            document.getElementById("playlists-loggedIn").style.display = "none";
-            document.getElementById("playlists-list").style.display = "none";
-            document.getElementById("id04").style.display = "block";
-            return
-        }
-    }
+    
 
 
 

@@ -312,7 +312,7 @@ footer {
 }
 
 
-.flex-container {
+.flex-container , .playlists-flex-container, .playlists-flex-container-2{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -320,7 +320,7 @@ footer {
     overflow: scroll;
 }
 
-.flex-container>div {
+.flex-container>div , .playlists-flex-container>div, .playlists-flex-container-2>div{
     font-size: 20px;
     overflow-wrap: anywhere;
     text-align: center;
@@ -374,7 +374,7 @@ input[type=text], input[type=password]{
     box-sizing: border-box;
   }
   
-  #id04 button, #id00 button, #id01 button,  #id02 button  {
+   #id00 button, #id01 button,  #id02 button, .btn-playlist  {
     background-color: rgb(157 51 51);
     color: white;
     padding: 2% 2%;
