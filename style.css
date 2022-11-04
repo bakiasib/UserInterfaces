@@ -18,28 +18,29 @@
 
 
 #song {
-    grid-area: song;
+    grid-area: song / song / song / song;
     position: absolute;
     height: 70%;
-    top: 20%;
-    left: 36%;
+    left: -20%;
 }
 #footer-img{
     grid-area: footer-img;
     position: absolute;
     height: 100%;
-    left: 0%;
+    left: 39%;
     width: auto;
-    top: 0%;
+    top: -6%;
 }
 
 #footer-song-name {
-    grid-area: footer-song-name;
+    grid-area: footer-song-name / footer-song-name / footer-song-name / footer-song-name;
     position: absolute;
-    left: 5%;
-    top: 2%;
+    left: -35%;
+    top: -5%;
     font-family: serif;
     font-size: larger;
+    display: inline-block;
+    margin: 25px 40px;
 }
 
 
@@ -47,8 +48,8 @@
     display: grid;
     overflow: hidden;
     height: 100vh;
-    grid-template-columns: 11% 89%;
-    grid-template-rows: 10% 2% 80% 2% 6%;
+    grid-template-columns: 13% 87%;
+    grid-template-rows: 8% 2% 80% 2% 8%;
     grid-template-areas:
         "header header2"
         ". ."
@@ -61,7 +62,7 @@
     height: 100vh;
     overflow: hidden;
     grid-template-columns: 11% 89%;
-    grid-template-rows: 10% 2% 80% 2% 6%;
+    grid-template-rows: 10% 2% 78% 2% 7%;
     grid-template-areas:
         "header header3"
         ". ."
@@ -267,7 +268,7 @@
 footer {
     grid-area: footer;
     text-align: center;
-    background: rgba(226, 224, 224, 0.903);
+    /*background: rgba(226, 224, 224, 0.903);*/
 }
 
 @media (max-width:700px) {
