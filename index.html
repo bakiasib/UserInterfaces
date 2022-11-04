@@ -646,6 +646,7 @@
             </div>
         </div>
 
+<<<<<<< HEAD
         <!-- Liked songs -->
         <div class="main-headers">
             <h2 style="padding: 5%;  font-weight: 400;   margin: 0%;">Songs liked</h2>
@@ -675,6 +676,37 @@
                 </button>
                 <p> Starboy - The Weeknd, Daft Punk </p>
             </div>
+=======
+                <!-- Liked songs -->
+                <div class="main-headers">
+                    <h2 style="padding: 5%;  font-weight: 400;   margin: 0%;">Songs liked</h2>
+                </div>
+                <div class="flex-container" id="all-songs-list">
+                    <div id="fav-icon-song" class="album-img" style="display: none"> <img src="images/MBDTF.jpeg"
+                            width="150" height="150">
+                        <button type="button" class="btn"
+                            onclick="audioControl('Runaway by Kanye West, Pusha T','music/s5.mp3', 'images/MBDTF.jpeg' )">
+                            <span class="material-symbols-outlined">play_arrow</span>
+                        </button>
+                        <button type="button" class="btn-pause" onclick="changeFill('fav-icon')"
+                            style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;">
+                            <span id="fav-icon" class="material-symbols-outlined"> favorite</span>
+                        </button>
+                        <p> Runaway by Kanye West, Pusha T </p>
+                    </div>
+                    <div id="fav-icon1-song" class="album-img" style="display: none"> <img src="images/Starboy.jpeg"
+                            width="150" height="150">
+                        <button type="button" class="btn"
+                            onclick="audioControl('Starboy - The Weeknd, Daft Punk','music/s6.mp3', 'images/Starboy.jpeg' )">
+                            <span class="material-symbols-outlined">play_arrow</span>
+                        </button>
+                        <button type="button" class="btn-pause" onclick="changeFill('fav-icon1')"
+                            style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;">
+                            <span id="fav-icon1" class="material-symbols-outlined"> favorite</span>
+                        </button>
+                        <p> Starboy - The Weeknd, Daft Punk </p>
+                    </div>
+>>>>>>> 2b96e88 (idk)
 
             <div id="fav-icon2-song" class="album-img" style="display: none"> <img src="images/flowerboy.webp"
                     width="150" height="150">
@@ -1512,6 +1544,160 @@
                 <p>nickmusic</p>
             </div>
 
+<<<<<<< HEAD
+=======
+                </div>
+        </section>
+        <section id="playlists-list" class="logged-in" style="display: none;">
+            <div class="main-headers">
+                <div class="profile-info" style="
+                background: #3f3e3e0f;
+                border-style: inset;
+                /* position: absolute; */
+            ">
+                    <p id="profile-tittle" style="font-weight: 400;margin-left: 17%;position: relative;top: 40px;">
+                        Profile</p>
+
+                    <img id="profile3" src="https://www.w3schools.com/howto/img_avatar.png" style="
+                    width: 14%;
+                    margin-left: 3%;
+                    border-radius: 50%;
+                ">
+
+                    <h2 id="username"
+                        style="padding: 4% 5% 5% 5% ;font-weight: 400; margin-left: 12%;margin-top: -15%;"></h2>
+                    <p style="margin-left: 17%;margin-top: -6%;"> Playlists: 5 </p>
+                    <p style="margin-left: 17%;margin-top: 0%; padding-bottom: 6%;"> Followers: 4</p>
+
+                </div>
+                <div class="flex-container">
+
+                </div>
+
+                <div class="main-headers">
+                    <!-- User playlists -->
+                    <div class="main-headers">
+                        <h2 style="padding: 5%;  font-weight: 400;   margin: 0%;">Playlists</h2>
+                    </div>
+                    <div class="flex-container" id="playlists-div">
+                        <div class="album-img"> <img src="images/playlist1.webp" width="150" height="150"
+                                onclick="navArtist('acdc')" style="
+                                cursor: pointer;">
+                            <p> The Crank </p>
+                        </div>
+
+                        <div class="album-img"> <img src="images/playlist2.webp" width="150" height="150"
+                                onclick="navArtist('acdc')" style="
+                                cursor: pointer;">
+                            <p> Work Out </p>
+                        </div>
+
+                        <div class="album-img"> <img src="images/playlist3.jpeg" width="150" height="150"
+                                onclick="navArtist('acdc')" style="
+                                cursor: pointer;">
+                            <p> Pain. </p>
+                        </div>
+
+                        <div class="album-img"> <img src="images/playlist4.jpeg" width="150" height="150"
+                                onclick="navArtist('acdc')" style="
+                                cursor: pointer;">
+                            <p> Late Night Vibes </p>
+                        </div>
+
+                        <div class="album-img"> <img src="images/playlist5.png" width="150" height="150"
+                                onclick="navArtist('acdc')" style="
+                                cursor: pointer;">
+                            <p> Rock & Roll </p>
+                        </div>
+                    </div>
+        </section>
+
+        <div id="id04" class="modal">
+
+
+            <form class="modal-content animate" id="signUp-data" onSubmit="signUpUser(event)" onCancel="clearInfo()">
+                <div class="imgcontainer">
+                    <img src="images/logo.png" alt="Avatar" class="avatar">
+                </div>
+
+                <div class="container" style="
+              font-family: sans-serif;
+          ">
+                    <label for="playlist-tittle"><b>Playlist title</b></label>
+                    <input type="text" placeholder="Enter Username" id="playlist-tittle" required>
+
+                    <label for="playlist-pic"><b>Playlist picture</b></label>
+                    <input type="text" placeholder="Enter address of image you want as your profile picture"
+                        id="playlist-pic">
+
+                    <label for="dropdown-search"><b>Add songs</b></label>
+                    <div id="dropdown-search">
+                        <input type="text" id="playlist-song-input" onkeyup="songSearch()"
+                            placeholder="Search for song.." title="Search for a song">
+                        <ul id="myUL-songs"></ul>
+                    </div>
+
+                    <button type="submit">Create</button>
+                    <button type="cancel" onClick="clearInfo()">Cancel</button>
+                </div>
+
+            </form>
+        </div>
+
+
+    </main>
+
+    <!-- Sidebar where the menu items are listed with their icons and description together with link to Privacy and Cookies Policy-->
+    <div id="sidebar">
+        <table class="menu-items" style="grid-area:tab1;">
+            <tr>
+                <td onClick="navigateSideBar('home')" style="cursor:pointer;">
+                    <span class="material-symbols-outlined">
+                        home
+                    </span>
+                    <p class="icon-label">Home</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td onClick="navigateSideBar('playlists')" style="cursor:pointer;"> <span
+                        class="material-symbols-outlined">
+                        library_music
+                    </span>
+                    <p class="icon-label">Playlists</p>
+            </tr>
+            <tr>
+                <td onClick="navigateSideBar('create')" style="cursor:pointer;">
+                    <span class="material-symbols-outlined">
+                        library_add
+                    </span>
+                    <p class="icon-label">Create Playlist</p>
+            </tr>
+        </table>
+
+        <a href=""
+            style="grid-area: link1;text-align: center;font-size: 70%;text-decoration: none;color: black;">Privacy
+            policy</a>
+        <a href=""
+            style="grid-area: link2;text-align: center;font-size: 70%;text-decoration: none;color: black;">Cookies
+            policy</a>
+
+    </div>
+
+    <!-- Footer with a welcome message to the users -->
+    <footer>
+        <p id="footer-welcome-message" style="color:rgb(29, 29, 30);"> Welcome to Gride! Here you can stream free music
+            as well as create your own
+            playlists or listen to the ones we have created for you. </p>
+
+        <div id="footer-audio">
+            <audio controls preload="auto" id="song">
+                <source src="" type="audio/mpeg" id="audio-control-source">
+            </audio>
+
+            <img id="footer-img" src="" alt="Album cover" width="10%">
+            <p id="footer-song-name"></p>
+>>>>>>> 2b96e88 (idk)
         </div>
 </section>
 
@@ -1572,8 +1758,14 @@
 </div>
 <script>
 
+<<<<<<< HEAD
 
 
+=======
+listOfSongs();
+
+   
+>>>>>>> 2b96e88 (idk)
     var loggedIn = getCookie("loggedIn").length > 2;
 
     function navArtist(artist) {
@@ -1618,12 +1810,12 @@
 
     function navigateSideBar(page) {
 
-
         if (getCookie("loggedIn").length < 2) {
             alert("You need to be logged in to access this page");
             return;
         }
         document.getElementById("main-section").scrollTop = 0;
+
         for (var i = 0; i < document.getElementsByClassName("artist").length; i++) {
             document.getElementsByClassName("artist")[i].style.display = "none";
         }
@@ -1631,13 +1823,21 @@
         document.getElementById("id02").style.display = "none";
 
         if (page == "home") {
+            document.getElementById("id04").style.display = "none";
+            document.getElementById("playlists-list").style.display = "none";
             document.getElementById("playlists-loggedIn").style.display = "block";
+
             return;
         } else if (page == "playlists") {
-            window.location.href = "playlists.html";
+            document.getElementById("playlists-loggedIn").style.display = "none";
+            document.getElementById("id04").style.display = "none";
+            document.getElementById("playlists-list").style.display = "block";
+
             return
         } else if (page == "create") {
-            window.location.href = "create.html";
+            document.getElementById("playlists-loggedIn").style.display = "none";
+            document.getElementById("playlists-list").style.display = "none";
+            document.getElementById("id04").style.display = "block";
             return
         }
     }
@@ -1653,6 +1853,9 @@
             document.getElementsByClassName("logged-in")[i].style.display = "none";
         }
     }
+
+
+
 
 </script>
 

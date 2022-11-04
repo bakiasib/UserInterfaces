@@ -144,6 +144,9 @@ function getAccountInfo() {
       if(document.getElementById("profile2") != null){
       document.getElementById("profile2").src =  list[6];
       }
+      if(document.getElementById("profile3") != null){
+        document.getElementById("profile3").src =  list[6];
+        }
     }
   }
 
@@ -186,6 +189,62 @@ function changeFill(id){
     document.getElementById(id + "-song").style.display = "block";
     return 
 
+}
+
+function selectSong(num){
+  var id;
+  if(num == 0 ){
+    id = "fav-icon-song";
+  }
+  id = "fav-icon" + num + "-song";
+
+  
+
+
+}
+
+
+
+function listOfSongs() {
+  var tittle;
+  var size =  document.getElementById('all-songs-list').childNodes.length;
+  var ul =  document.getElementById("myUL-songs");
+  for (var i = 1, j=0; i<size; i++, j++) {
+      
+      tittle = document.getElementById('all-songs-list').childNodes[i].getElementsByTagName("p")[0].innerHTML;
+      console.log(tittle);
+
+      var entry = document.createElement('li');
+      entry.setAttribute("class", "song-list");
+      console.log(entry);
+
+      var asset = document.createElement('a');
+      asset.setAttribute("class", "song-name");
+      asset.setAttribute("onclick", "selectSong('j')");
+      asset.textContent = tittle;
+
+      entry.appendChild(asset);
+      ul.appendChild(entry);
+      i++;
+  }
+
+}
+
+function songSearch() {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById("playlist-song-input");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL-songs");
+  li = ul.getElementsByClassName("song-list");
+  for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByClassName("song-name")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+      } else {
+          li[i].style.display = "none";
+      }
+  }
 }
 
  
