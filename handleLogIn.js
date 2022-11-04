@@ -17,19 +17,8 @@ function countdown(releaseDate,id){
   }
   
     function logInIndex(){
-      var loggedIn = getCookie("loggedIn").length > 2;
 
-      if (loggedIn) {
-          window.onload = getProfilePic;
-          for (var i = 0; i < document.getElementsByClassName("not-logged-in").length; i++) {
-              document.getElementsByClassName("not-logged-in")[i].style.display = "none";
-          }
-      }
-      if (!loggedIn) {
-          for (var i = 0; i < document.getElementsByClassName("logged-in").length; i++) {
-              document.getElementsByClassName("logged-in")[i].style.display = "none";
-          }
-      }
+
   }
 
 function createCookies(uname, psw, fname, lname, email, dob, accepted, profilePic) {
@@ -86,7 +75,18 @@ function clearInfo() {
   document.getElementById("profile-pic").value = "";
 }
 
-function save(event) {
+function save(event, update) {
+  if(update == "1"){
+  var uname = document.getElementById("uname1").value;
+  var psw = document.getElementById("psw1").value;
+  var fname = document.getElementById("fname1").value;
+  var lname = document.getElementById("lname1").value;
+  var email = document.getElementById("email1").value;
+  var dob = document.getElementById("dob1").value;
+  var accepted = document.getElementById("accepted1").value;
+  var profilePic = document.getElementById("profile-pic1").value;
+  }
+  else{
   event.preventDefault();
   var uname = document.getElementById("uname").value;
   var psw = document.getElementById("psw").value;
@@ -96,6 +96,7 @@ function save(event) {
   var dob = document.getElementById("dob").value;
   var accepted = document.getElementById("accepted").value;
   var profilePic = document.getElementById("profile-pic").value;
+  }
   console.log('saving data for ' + uname);
   createCookies(uname, psw, fname, lname, email, dob, accepted, profilePic);
   if (getCookie(uname) != null) {
@@ -107,14 +108,28 @@ function save(event) {
     return
   }
 }
-function updateAccountInfo(event){
-  save(event);
-  window.location.replace('/index.html')
 
+function sign(option) {
+  document.getElementById("main-section").scrollTop = 0;
+  document.getElementById("playlists-not-loggedIn").style.display = "none";
+  if (option == "in") {
+      document.getElementById("id00").style.display = "none";
+      document.getElementById("id01").style.display = "block";
+      return
+  }
+  document.getElementById("id01").style.display = "none";
+  document.getElementById("id00").style.display = "block";
+  return
 }
-function signUpUser(event){
-  save(event);
 
+function updateAccountInfo(event){
+  save(event, "1");
+  window.location.replace('/index.html')
+}
+
+function signUpUser(event){
+  save(event, "0");
+  return;
 }
 
 function checkCredentials(uname, psw) {
@@ -122,7 +137,6 @@ function checkCredentials(uname, psw) {
   if (username.length > 0) {
     var list = JSON.parse(username);
     if (list[0] == psw) {
-      console.log("correct password");
       return true;
     }
     else {
@@ -154,7 +168,6 @@ function checkCookie(event) {
 
 function getAccountInfo() {
   var username = getCookie("loggedIn").replaceAll('"', '');
-  console.log(username);
   if (username.length > 0) {
     var accountInfo = getCookie(username);
     var list = JSON.parse(accountInfo);
@@ -170,7 +183,6 @@ function getAccountInfo() {
 
   function getProfilePic() {
     var username = getCookie("loggedIn").replaceAll('"', '');
-    console.log(username);
     if (username.length > 0) {
       var accountInfo = getCookie(username);
       var list = JSON.parse(accountInfo);
@@ -186,7 +198,6 @@ function getAccountInfo() {
 
     function getUsername() {
       var username = getCookie("loggedIn").replaceAll('"', '');
-      console.log(username);
       if (username.length > 0) {
         document.getElementById("username").innerHTML = username ;
         }
@@ -203,20 +214,16 @@ function audioControl(song, path, image){
 }
 
 function changeFill(id){
-  console.log(document.getElementById(id + "-song"));
-
   var opt2 = '"FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48';
   var opt3 = '"FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48';
   if(document.getElementById(id).style.fontVariationSettings == opt3){ 
     document.getElementById(id).style.fontVariationSettings = opt2;
     document.getElementById(id + "-song").style.display = "block";
-    console.log(document.getElementById(id + "-song"));
     return
   }
   if(document.getElementById(id).style.fontVariationSettings == opt2){
     document.getElementById(id).style.fontVariationSettings = opt3;
     document.getElementById(id + "-song").style.display = "none";
-    console.log(document.getElementById(id + "-song"));
     return 
   }
     document.getElementById(id).style = "font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;";
@@ -224,7 +231,6 @@ function changeFill(id){
     return 
 
 }
-
 function selectSong(num){
   var id;
   if(num == 0 ){
@@ -240,17 +246,17 @@ function selectSong(num){
 
 
 function listOfSongs() {
+  if(getCookie("loggedIn").length > 0){
   var tittle;
   var size =  document.getElementById('all-songs-list').childNodes.length;
   var ul =  document.getElementById("myUL-songs");
+  
   for (var i = 1, j=0; i<size; i++, j++) {
       
       tittle = document.getElementById('all-songs-list').childNodes[i].getElementsByTagName("p")[0].innerHTML;
-      console.log(tittle);
 
       var entry = document.createElement('li');
       entry.setAttribute("class", "song-list");
-      console.log(entry);
 
       var asset = document.createElement('a');
       asset.setAttribute("class", "song-name");
@@ -261,7 +267,8 @@ function listOfSongs() {
       ul.appendChild(entry);
       i++;
   }
-
+  }
+  return
 }
 
 function songSearch() {
