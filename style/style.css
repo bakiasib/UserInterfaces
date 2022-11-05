@@ -229,7 +229,7 @@
 #profile-dropdown:hover #profile-dropdown-content {display: block;}
 
 #myInput {
-    grid-area: my-input;
+    
     background-position: left;
     background-size: 14%;
     background-repeat: no-repeat;
@@ -454,13 +454,22 @@ input[type=text], input[type=password]{
     margin: 0px 15px 0px 10px;
 
 }
+#dropdown-search-main{
+    grid-area: my-input;
+    position: relative;
+    display: inline-block;
+    width: 100%;
 
-  
+}
   #dropdown-search{
     position: relative;
     display: inline-block;
     width: 100%;
   }
+    
+  #dropdown-search-main:hover #myUL-songs-main {display: block;}
+  
+  
   
   #dropdown-search:hover #myUL-songs {display: block;}
   
@@ -475,14 +484,14 @@ input[type=text], input[type=password]{
     background-blend-mode: difference;
   }
   
-  #myUL-songs {
+  #myUL-songs, #myUL-songs-main {
   display:none;
     list-style-type: none;
     padding: 0;
     margin: 0;
   }
   
-  #myUL-songs li a {
+  #myUL-songs li a, #myUL-songs-main li a  {
     border: 1px solid #ddd;
     margin-top: -1px; /* Prevent double borders */
     background-color: #f6f6f6;
@@ -493,7 +502,7 @@ input[type=text], input[type=password]{
     display: block
   }
   
-  #myUL-songs li a:hover:not(.header) {
+  #myUL-songs li a:hover:not(.header), #myUL-songs-main li a:hover:not(.header) {
     background-color: #eee;
   }
 

@@ -1,3 +1,4 @@
+
 function countdown(releaseDate, id) {
   var countDownDate = new Date(releaseDate).getTime();
   var x = setInterval(function () {
@@ -16,10 +17,6 @@ function countdown(releaseDate, id) {
   }, 1000);
 }
 
-function logInIndex() {
-
-
-}
 
 function createCookies(uname, psw, fname, lname, email, dob, accepted, profilePic) {
   console.log("creatig cookies")
@@ -248,6 +245,23 @@ function selectSong(num) {
   document.getElementById("list-of-chosen").appendChild(songName);
 }
 
+function selectSongMain(num) {
+  var id;
+
+  id = "fav-icon" + num + "-song";
+
+  if (num == "0") {
+    id = "fav-icon-song";
+  }
+
+  console.log(id);
+  var playSong = document.getElementById(id).childNodes[3].getAttribute('onclick');
+  eval(playSong);
+  document.getElementById("myUL-songs-main").style.display = "none";
+
+}
+
+
 function navDropDown(option) {
   document.getElementById("main-section").scrollTop = 0;
 
@@ -258,8 +272,10 @@ function navDropDown(option) {
   document.getElementById("id04").style.display = "none";
   document.getElementById("playlists-loggedIn").style.display = "none";
   if (document.querySelector('[id^="playlist-page-"]') != null) {
-    document.querySelector('[id^="playlist-page-"]').style.display = "none";
+    for(var i = 0; i < document.querySelectorAll('[id^="playlist-page-"]').length; i++) {
+    document.querySelectorAll('[id^="playlist-page-"]')[i].style.display = "none";
   }
+}
 
 
   if (option == "profile") {
@@ -312,6 +328,19 @@ function navigateSideBar(page) {
     return
   }
 }
+
+function moveChoiceTo(elem_choice, direction) {
+
+  var span = elem_choice.parentNode,
+      td = span.parentNode;
+
+  if (direction === -1 && span.previousElementSibling) {
+      td.insertBefore(span, span.previousElementSibling);
+  } else if (direction === 1 && span.nextElementSibling) {
+      td.insertBefore(span, span.nextElementSibling.nextElementSibling)
+  }
+}
+
 function fillPlaylist(songList, playlistName, imgLink) {
   var emptyPage = document.getElementById("empty-page");
   var page = emptyPage.cloneNode(true);
@@ -319,8 +348,8 @@ function fillPlaylist(songList, playlistName, imgLink) {
   page.setAttribute("id", "playlist-page-" + playlistName.replaceAll(" ", "-"));
   page.childNodes[1].childNodes[1].childNodes[1].innerHTML = playlistName;
   page.childNodes[1].childNodes[1].childNodes[3].src = imgLink;
-  page.childNodes[1].childNodes[1].childNodes[5].innerHTML = "Created by " + getCookie("loggedIn").replaceAll('"', '');
-  page.childNodes[1].childNodes[1].childNodes[7].innerHTML = songList.length + " songs";
+  page.childNodes[1].childNodes[1].childNodes[5].innerHTML = playlistName;
+  page.childNodes[1].childNodes[1].childNodes[7].innerHTML = "Created by " + getCookie("loggedIn").replaceAll('"', '');
   var listWithSongs = page.childNodes[1].childNodes[5];
   for (var i = 0; i < songList.length; i++) {
     var songName = document.getElementById(songList[i]);
@@ -344,6 +373,8 @@ function showPlaylist(playlistName) {
   document.getElementById("profile-playlists").style.display = "none";
   document.getElementById("playlist-page-" + playlistName.replaceAll(" ", "-")).style.display = "block";
 }
+
+
 var formId = 0;
 function addNewPlaylist(event) {
   event.preventDefault();
@@ -376,7 +407,30 @@ function addNewPlaylist(event) {
 
 }
 
+function listOfSongsMain() {
+  if (getCookie("loggedIn").length > 0) {
+    var tittle;
+    var size = document.getElementById('all-songs-list').childNodes.length;
+    var ulMain = document.getElementById("myUL-songs-main");
 
+    for (var i = 1, j = 0; i < size; i++, j++) {
+
+      tittle = document.getElementById('all-songs-list').childNodes[i].getElementsByTagName("p")[0].innerHTML;
+
+      var entryMain = document.createElement('li');
+      entryMain.setAttribute("class", "song-list-main");
+
+      var assetMain = document.createElement('a');
+      assetMain.setAttribute("class", "song-name-main");
+      assetMain.setAttribute("onclick", "selectSongMain('" + j + "')");
+      assetMain.textContent = tittle;
+      
+      entryMain.appendChild(assetMain);
+      ulMain.appendChild(entryMain);
+      i++;
+    }
+  }
+}
 
 function listOfSongs() {
   if (getCookie("loggedIn").length > 0) {
@@ -401,7 +455,6 @@ function listOfSongs() {
       i++;
     }
   }
-  return
 }
 
 function songSearch() {
@@ -413,6 +466,24 @@ function songSearch() {
   li = ul.getElementsByClassName("song-list");
   for (i = 0; i < li.length; i++) {
     a = li[i].getElementsByClassName("song-name")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+function songSearchMain() {
+  document.getElementById("myUL-songs-main").style.display = "block";
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL-songs-main");
+  li = ul.getElementsByClassName("song-list-main");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByClassName("song-name-main")[0];
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
       li[i].style.display = "";
@@ -440,3 +511,4 @@ function countdown(releaseDate, id) {
     }
   }, 1000);
 }
+
