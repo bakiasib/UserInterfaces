@@ -204,9 +204,10 @@
         <!-- Sign Up Page-->
         <div id="id00" class="modal">
             <form class="modal-content animate" id="signUp-data" onSubmit="signUpUser(event)" onCancel="clearInfo()">
-                <div class="imgcontainer">
-                    <img src="images/logo.png" alt="Avatar" class="avatar">
-                </div>
+                <h2 style="padding: 5%;font-weight: 400;font-size: 400%;color: #272626;left: 0px;
+                margin-top: -5%;
+                margin-bottom: 8%;">Create an account</h2>
+
 
                 <div class="container" style="
               font-family: sans-serif;
@@ -245,7 +246,13 @@
                     <button type="submit">Sign up</button>
                     <button type="cancel" onClick="clearInfo()">Clear</button>
                     <label>
-                        <h4>Sign up with:</h4>
+                       <h4 style="
+                        font-weight: 500;
+                        font-size: 109%;
+                        font-family: sans-serif;
+                        width: 76%;
+                        color: #272627;
+                    ">Sign up with: </h4>
                         <img src="images/google.png" alt="google" class="google"
                             style="width: 11%;cursor: pointer;position: relative;left: 35%;">
                         <img src="images/facebook.png" alt="facebook" class="facebook"
@@ -258,36 +265,44 @@
         </div>
         <!-- Sign in page -->
         <div id="id01" class="modal">
+            <form class="modal-content animate" id="user-data" onSubmit="checkCookie(event)">
+
+            <h2 style="padding: 5%;font-weight: 400;font-size: 400%;color: #272626;left: 0px;
+            margin-top: -5%;
+            margin-bottom: 8%;"></h2>
 
 
-            <form class="modal-content animate" id="logIn-data" onSubmit="checkCookie(event)">
-                <div class="imgcontainer">
-                    <img src="images/logo.png" alt="Avatar" class="avatar">
-                </div>
-
-                <div class="container" style="
-              font-family: sans-serif;
-          ">
+            <div class="container" style="font-family: sans-serif; width: 80%; margin-left: 7%;">
                     <label for="uname"><b>Username</b></label>
                     <input type="text" placeholder="Enter Username" name="uname" required>
 
                     <label for="psw"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" name="psw" required>
                     <label>
-                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                        <input type="checkbox" checked="checked" name="remember" style="
+                        font-weight: 500;
+                        font-size: 109%;
+                        font-family: sans-serif;
+                        color: #272627;"> Remember me
                     </label>
 
-                    <button type="submit" onclick=checkCookie()>Login</button>
+                    <button type="submit">Login</button>
 
                     <label>
-                        <h4>Sign in with:</h4>
+                        <h4 style="
+                        font-weight: 500;
+                        font-size: 109%;
+                        font-family: sans-serif;
+                        width: 76%;
+                        color: #272627;
+                    ">Sign in with: </h4>
                         <img src="images/google.png" alt="google" class="google"
                             style="width: 11%;cursor: pointer;position: relative;left: 35%;">
                         <img src="images/facebook.png" alt="facebook" class="facebook"
                             style="width: 11.7%;cursor: pointer; position: relative;left: 40%;">
                     </label>
 
-                </div>
+            </div>
 
             </form>
         </div>
@@ -1076,11 +1091,10 @@
               font-family: sans-serif;
           ">
 
-                    <h1 id="account-info" style="
-                text-align: center;
-                padding-top: 2%;
-                position: relative;
-            ">Account Information</h1>
+                    <h2 id="account-info"style="padding: 5%;font-weight: 400;font-size: 400%;color: #272626;left: 0px;
+                    margin-top: -5%;
+                    margin-bottom: 8%;"
+            >Account Information</h2>
 
 
                     <label for="uname1"><b>Username</b></label>
@@ -1651,13 +1665,15 @@
         <!-- Create a playlist page -->
         <div id="id04" class="modal">
             <form class="modal-content animate" id="playlist-data" onSubmit="addNewPlaylist(event)">
-                <div class="imgcontainer">
-                    <img src="images/logo.png" alt="Avatar" class="avatar">
-                </div>
+                <h2 style="padding: 5%;font-weight: 400;font-size: 400%;color: #272626;left: 0px;
+                margin-top: -5%;
+                margin-bottom: 8%;">Create a playlist</h2>
+
 
                 <div class="container" id="container-songs" style="
-              font-family: sans-serif;
-          ">
+                font-family: sans-serif;
+                padding: 5%;
+            ">
                     <label for="playlist-tittle"><b>Playlist title</b></label>
                     <input type="text" placeholder="Enter playlist title" id="playlist-tittle" required>
 

@@ -408,14 +408,14 @@ p{
 }
 
 /* Style for Login and Sign Up */
-
-input[type=text], input[type=password]{
+input[type=text], input[type=password] {
     width: 100%;
     padding: 2% 2%;
-    margin: 8px 0;
     display: inline-block;
     box-sizing: border-box;
-  }
+    margin-top: 3%;
+    margin-bottom: 9%;
+}
   
    #id00 button, #id01 button,  #id02 button, .btn-playlist  {
     background-color: rgb(157 51 51);
@@ -457,6 +457,13 @@ input[type=text], input[type=password]{
     height: 100%;
     overflow: scroll; 
     padding-top: 60px;
+  }
+
+  #id04 b, #id00 b, #id01 b, #id02 b{
+    font-weight: initial;
+    font-family: serif;
+    font-size: x-large;
+    color: #272626;
   }
   
 
@@ -554,11 +561,12 @@ input[type=text], input[type=password]{
 
   input {
     border: 1px solid #9e9e9ecc;
+    
   }
 
-  .error {
+  .error {   
     display: block;
     color: brown;
-    margin: 0px 0px 20px 0;
-    font-size: 12px;
+    margin: -7% 0px 20px 0;
+    font-size: initial;
   }
