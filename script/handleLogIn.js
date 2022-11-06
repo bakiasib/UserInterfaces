@@ -1,4 +1,4 @@
-
+//function to countdown to the release date
 function countdown(releaseDate, id) {
   var countDownDate = new Date(releaseDate).getTime();
   var x = setInterval(function () {
@@ -17,7 +17,7 @@ function countdown(releaseDate, id) {
   }, 1000);
 }
 
-
+//creating cookies for the user
 function createCookies(uname, psw, fname, lname, email, dob, accepted, profilePic) {
   console.log("creatig cookies")
   const d = new Date();
@@ -28,7 +28,7 @@ function createCookies(uname, psw, fname, lname, email, dob, accepted, profilePi
   return
 }
 
-
+//helper function to check if the user is logged in
 function createACookie(uname) {
   console.log("creatig cookies")
   const d = new Date();
@@ -37,7 +37,7 @@ function createACookie(uname) {
   document.cookie = "loggedIn" + "=" + JSON.stringify(uname) + ";" + expires + ";path=/";
   return
 }
-
+//function to log out the user
 function logOut() {
   if (confirm("Are you sure you want to log out?")) {
     document.cookie = "loggedIn=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
@@ -46,7 +46,7 @@ function logOut() {
   return;
 }
 
-
+//function to get the cookie
 function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
@@ -62,7 +62,7 @@ function getCookie(cname) {
   }
   return "";
 }
-
+//function to clear form information
 function clearInfo() {
   document.getElementById("uname").value = "";
   document.getElementById("fname").value = "";
@@ -72,7 +72,7 @@ function clearInfo() {
   document.getElementById("accepted").value = "";
   document.getElementById("profile-pic").value = "";
 }
-
+//function to save form information entered by the user into a cookie or update a cookie
 function save(event, update) {
   if (update == "1") {
     var uname = document.getElementById("uname1").value;
@@ -106,7 +106,7 @@ function save(event, update) {
     return
   }
 }
-
+//function navigate to the sign up and log in page
 function sign(option) {
   document.getElementById("main-section").scrollTop = 0;
   document.getElementById("playlists-not-loggedIn").style.display = "none";
@@ -119,17 +119,17 @@ function sign(option) {
   document.getElementById("id00").style.display = "block";
   return
 }
-
+//function to update account information
 function updateAccountInfo(event) {
   save(event, "1");
   window.location.replace('/index.html')
 }
-
+//function to sign up a new user
 function signUpUser(event) {
   save(event, "0");
   return;
 }
-
+// helper function to check credentials when the user tries to log in
 function checkCredentials(uname, psw) {
   var username = getCookie(uname);
   if (username.length > 0) {
@@ -138,23 +138,22 @@ function checkCredentials(uname, psw) {
       return true;
     }
     else {
-      console.log("incorrect password");
+      alert("Incorrect password");
       return false;
     }
   }
   else {
-    console.log("username not found");
+    alert("Username with that username does not exist");
     return false;
   }
 }
-
+//function to log in the user
 function checkCookie(event) {
   event.preventDefault();
   var user = checkCredentials(document.getElementsByName("uname")[0].value, document.getElementsByName("psw")[0].value);
   if (user == true) {
     console.log("user found");
     createACookie(document.getElementsByName("uname")[0].value);
-
     window.location.replace('/index.html')
     logInIndex();
     return
@@ -164,6 +163,8 @@ function checkCookie(event) {
   }
 }
 
+
+//function to get the user's account information
 function getAccountInfo() {
   var username = getCookie("loggedIn").replaceAll('"', '');
   if (username.length > 0) {
@@ -178,7 +179,7 @@ function getAccountInfo() {
     document.getElementById("profile-pic1").value = list[6];
   }
 }
-
+//funciton to get profile picture
 function getProfilePic() {
   var username = getCookie("loggedIn").replaceAll('"', '');
   if (username.length > 0) {
@@ -193,7 +194,7 @@ function getProfilePic() {
     }
   }
 }
-
+//function to get the logged in users username
 function getUsername() {
   var username = getCookie("loggedIn").replaceAll('"', '');
   if (username.length > 0) {
@@ -201,7 +202,7 @@ function getUsername() {
   }
 }
 
-
+//funciton to show audio controls in footer when user clicks on a song
 function audioControl(song, path, image) {
   document.getElementById("footer-welcome-message").style.display = "none";
   document.getElementById("footer-audio").style.display = "grid";
@@ -211,6 +212,7 @@ function audioControl(song, path, image) {
   document.getElementById("song").play();
 }
 
+//function to change fill oh heart button when user likes a song
 function changeFill(id) {
   var opt2 = '"FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48';
   var opt3 = '"FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48';
@@ -229,6 +231,7 @@ function changeFill(id) {
   return
 
 }
+//function to select a song to add to a playlist via search
 function selectSong(num) {
   var id;
 
@@ -243,8 +246,11 @@ function selectSong(num) {
   songName.style.display = "block";
   console.log(songName);
   document.getElementById("list-of-chosen").appendChild(songName);
+  document.getElementById('myUL-songs').style.display = "none";
+
 }
 
+//function to select a song in main page via search engine
 function selectSongMain(num) {
   var id;
 
@@ -261,7 +267,7 @@ function selectSongMain(num) {
 
 }
 
-
+//function to navigate the dropdown menu
 function navDropDown(option) {
   document.getElementById("main-section").scrollTop = 0;
 
@@ -272,10 +278,10 @@ function navDropDown(option) {
   document.getElementById("id04").style.display = "none";
   document.getElementById("playlists-loggedIn").style.display = "none";
   if (document.querySelector('[id^="playlist-page-"]') != null) {
-    for(var i = 0; i < document.querySelectorAll('[id^="playlist-page-"]').length; i++) {
-    document.querySelectorAll('[id^="playlist-page-"]')[i].style.display = "none";
+    for (var i = 0; i < document.querySelectorAll('[id^="playlist-page-"]').length; i++) {
+      document.querySelectorAll('[id^="playlist-page-"]')[i].style.display = "none";
+    }
   }
-}
 
 
   if (option == "profile") {
@@ -290,7 +296,7 @@ function navDropDown(option) {
   }
 
 }
-
+//function to navigate the sidebar in main page
 function navigateSideBar(page) {
 
   if (getCookie("loggedIn").length < 2) {
@@ -305,9 +311,10 @@ function navigateSideBar(page) {
   document.getElementById("profile-playlists").style.display = "none";
   document.getElementById("id02").style.display = "none";
   if (document.querySelector('[id^="playlist-page-"]') != null) {
-    document.querySelector('[id^="playlist-page-"]').style.display = "none";
+    for (var i = 0; i < document.querySelectorAll('[id^="playlist-page-"]').length; i++) {
+      document.querySelectorAll('[id^="playlist-page-"]')[i].style.display = "none";
+    }
   }
-
 
   if (page == "home") {
     document.getElementById("id04").style.display = "none";
@@ -328,37 +335,79 @@ function navigateSideBar(page) {
     return
   }
 }
-
+//function to change order of songs in a playlist
 function moveChoiceTo(elem_choice, direction) {
+  var span = document.getElementById(elem_choice).parentNode.parentNode;
+  td = span.parentNode;
 
-  var span = elem_choice.parentNode,
-      td = span.parentNode;
+  var curr_index = -1; //index of elem that we should move
 
-  if (direction === -1 && span.previousElementSibling) {
-      td.insertBefore(span, span.previousElementSibling);
-  } else if (direction === 1 && span.nextElementSibling) {
-      td.insertBefore(span, span.nextElementSibling.nextElementSibling)
+  for (var i = 0; i < td.children.length; i++) { //determine index of elem that called this function
+    if (td.children[i] == span) {
+      curr_index = i;
+      break;
+    }
+  }
+  if (curr_index == -1) { console.log(" Can not go backwards"); return; }
+  if (curr_index == 0 && direction == -1) {
+    console.log(" Can not go backwards")
+    return;
+  }
+  if (curr_index == td.children.length - 1 && direction == 1) {
+    console.log(" Can not go forward");
+    return;
+  }
+  var nodeIndex = td.children[curr_index];
+
+  if (direction === -1) {
+    td.insertBefore(nodeIndex, nodeIndex.previousElementSibling);
+    console.log("moving back");
+    return
+  } else if (direction === 1) {
+    td.insertBefore(nodeIndex, nodeIndex.nextElementSibling.nextElementSibling)
+    console.log("moving forward");
+    return
   }
 }
 
+//function to fill a playlist with the songs chosen by the user
 function fillPlaylist(songList, playlistName, imgLink) {
   var emptyPage = document.getElementById("empty-page");
   var page = emptyPage.cloneNode(true);
-  // var page = document.getElementById("empty-page")
   page.setAttribute("id", "playlist-page-" + playlistName.replaceAll(" ", "-"));
   page.childNodes[1].childNodes[1].childNodes[1].innerHTML = playlistName;
   page.childNodes[1].childNodes[1].childNodes[3].src = imgLink;
   page.childNodes[1].childNodes[1].childNodes[5].innerHTML = playlistName;
-  page.childNodes[1].childNodes[1].childNodes[7].innerHTML = "Created by " + getCookie("loggedIn").replaceAll('"', '');
   var listWithSongs = page.childNodes[1].childNodes[5];
   for (var i = 0; i < songList.length; i++) {
-    var songName = document.getElementById(songList[i]);
+    var songName = document.getElementById(songList[i]).cloneNode(true);
+    var newFavId = songList[i] + "-playlist-" + playlistName.replaceAll(" ", "-");
+    var forwardButton = document.getElementById("btn-forward").cloneNode(true);
+    forwardButton.setAttribute("id", "btn-forward-" + playlistName.replaceAll(" ", "-") + "-" + i);
+    forwardButton.setAttribute("onclick", "moveChoiceTo('" + newFavId + "' , 1)");
+    forwardButton.setAttribute("style", "");
+    songName.appendChild(forwardButton);
+
+    var backwardButton = document.getElementById("btn-back").cloneNode(true);
+    backwardButton.setAttribute("id", "btn-back-" + playlistName.replaceAll(" ", "-") + "-" + i);
+    backwardButton.setAttribute("onclick", "moveChoiceTo('" + newFavId + "' , -1)");
+    backwardButton.setAttribute("style", "");
+    songName.appendChild(backwardButton);
+
+
+    songName.setAttribute("id", newFavId + "-song");
+    songName.childNodes[5].setAttribute("onclick", "changeFill('" + newFavId + "')");
+    songName.childNodes[5].setAttribute("style", document.getElementById(songList[i]).childNodes[5].getAttribute("style"));
+    songName.childNodes[5].childNodes[1].setAttribute("id", newFavId);
+    songName.childNodes[5].childNodes[1].setAttribute("style", "font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;");
+
     songName.style.display = "block";
+
     listWithSongs.appendChild(songName);
   }
   document.getElementById("main-section").appendChild(page);
 }
-
+//function to navigate to a playlist page
 function showPlaylist(playlistName) {
   document.getElementById("main-section").scrollTop = 0;
 
@@ -371,11 +420,14 @@ function showPlaylist(playlistName) {
   document.getElementById("playlists-loggedIn").style.display = "none";
   document.getElementById("id02").style.display = "none";
   document.getElementById("profile-playlists").style.display = "none";
+  if (document.querySelector('[id^="playlist-page-"]') != null) {
+    for (var i = 0; i < document.querySelectorAll('[id^="playlist-page-"]').length; i++) {
+      document.querySelectorAll('[id^="playlist-page-"]')[i].style.display = "none";
+    }
+  }
   document.getElementById("playlist-page-" + playlistName.replaceAll(" ", "-")).style.display = "block";
 }
-
-
-var formId = 0;
+//function to add a new playlist to a playlist list
 function addNewPlaylist(event) {
   event.preventDefault();
   var srcLink = document.getElementById("playlist-pic").value;
@@ -394,7 +446,9 @@ function addNewPlaylist(event) {
     var newClone = clone.cloneNode(true);
     newClone.setAttribute("id", "playlist-" + namePlaylist.replaceAll(" ", "-") + i);
     newClone.childNodes[1].setAttribute("onclick", "showPlaylist(" + "'" + namePlaylist + "'" + ")");
-    document.getElementsByClassName("playlists-flex-container")[i].prepend(newClone);
+    if (document.getElementsByClassName("playlists-flex-container")[i].id != "album") {
+      document.getElementsByClassName("playlists-flex-container")[i].prepend(newClone);
+    }
   }
   fillPlaylist(songList, namePlaylist, srcLink);
 
@@ -406,7 +460,7 @@ function addNewPlaylist(event) {
 
 
 }
-
+//function showing list of all songs for the main page
 function listOfSongsMain() {
   if (getCookie("loggedIn").length > 0) {
     var tittle;
@@ -424,14 +478,14 @@ function listOfSongsMain() {
       assetMain.setAttribute("class", "song-name-main");
       assetMain.setAttribute("onclick", "selectSongMain('" + j + "')");
       assetMain.textContent = tittle;
-      
+
       entryMain.appendChild(assetMain);
       ulMain.appendChild(entryMain);
       i++;
     }
   }
 }
-
+//function to show the list of all songs for the create a playlist page
 function listOfSongs() {
   if (getCookie("loggedIn").length > 0) {
     var tittle;
@@ -456,7 +510,7 @@ function listOfSongs() {
     }
   }
 }
-
+//function to search for a song in the create a playlist page
 function songSearch() {
   document.getElementById("myUL-songs").style.display = "block";
   var input, filter, ul, li, a, i, txtValue;
@@ -474,7 +528,7 @@ function songSearch() {
     }
   }
 }
-
+//function to search for a song in the main page
 function songSearchMain() {
   document.getElementById("myUL-songs-main").style.display = "block";
   var input, filter, ul, li, a, i, txtValue;
@@ -491,24 +545,5 @@ function songSearchMain() {
       li[i].style.display = "none";
     }
   }
-}
-
-
-function countdown(releaseDate, id) {
-  var countDownDate = new Date(releaseDate).getTime();
-  var x = setInterval(function () {
-    var now = new Date().getTime();
-    var distance = countDownDate - now;
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    document.getElementById(id).innerHTML = days + "d " + hours + "h "
-      + minutes + "m " + seconds + "s ";
-    if (distance < 0) {
-      clearInterval(x);
-      document.getElementById("demo").innerHTML = "RELEASED";
-    }
-  }, 1000);
 }
 
