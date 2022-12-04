@@ -208,6 +208,7 @@ function getProfilePic() {
   if (username.length > 0) {
     var accountInfo = getCookie(username);
     var list = JSON.parse(accountInfo);
+    if(list[6] != ""){
     document.getElementById("profile").src = list[6];
     if (document.getElementById("profile2") != null) {
       document.getElementById("profile2").src = list[6];
@@ -215,6 +216,7 @@ function getProfilePic() {
     if (document.getElementById("profile3") != null) {
       document.getElementById("profile3").src = list[6];
     }
+  }
   }
 }
 //function to get the logged in users username
