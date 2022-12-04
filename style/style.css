@@ -77,14 +77,13 @@
     grid-template-rows: unset;
     overflow: scroll;
     box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
-    border-radius: 4%;
+ 
 }
 
 #title {
-    grid-area: title;
-    color: black;
-    font-family: 'Audiowide';
-    font-size: large;
+    grid-area: title / title / title / title;
+    color: #000000c7;
+    font-family: Audiowide;
     position: absolute;
     left: 12%;
 }
@@ -104,11 +103,10 @@
 
 #logo {
     grid-area: logo;
-    width: 11%;
+    width: 8.5%;
     position: absolute;
-    top: 3%;
-    left: 2%;
-
+    top: 1%;
+    left: 2.5%;
 }
 
 #header2 {
@@ -238,17 +236,17 @@
 
 #myInput {
     
-    background-position: left;
+    background-position: 7% center;
     background-size: 14%;
     background-repeat: no-repeat;
-    background-position-x: 7%;
     width: 100%;
     font-size: 16px;
     padding: 12px 9px 11px 71px;
-    border: 1px solid #ddd;
+    border: 1px solid rgb(221, 221, 221);
     margin-bottom: 12px;
     background-image: url(https://cdn.pixabay.com/photo/2017/01/13/01/22/magnifying-glass-1976105_1280.png);
     background-blend-mode: difference;
+    background-size: 9%;
 }
 #sidebar {
     grid-area: sidebar;
