@@ -131,14 +131,14 @@ function save(event, update) {
 function sign(option) {
   document.getElementById("main-section").scrollTop = 0;
   document.getElementById("playlists-not-loggedIn").style.display = "none";
+  document.getElementById("aboutUsPage").style.display = "none";
+
   if (option == "in") {
     document.getElementById("id00").style.display = "none";
-    document.getElementById("aboutUsPage").style.display = "none";
     document.getElementById("id01").style.display = "block";
     return
   }
   document.getElementById("id01").style.display = "none";
-  document.getElementById("aboutUsPage").style.display = "none";
   document.getElementById("id00").style.display = "block";
   return
 }
@@ -346,7 +346,6 @@ function navigateSideBar(page) {
     document.getElementById("id04").style.display = "none";
     document.getElementById("playlists-list").style.display = "none";
     document.getElementById("playlists-loggedIn").style.display = "block";
-
     return;
   } else if (page == "playlists") {
     document.getElementById("aboutUsPage").style.display = "none";
@@ -363,11 +362,13 @@ function navigateSideBar(page) {
     return
   }
 
-  if(page == "aboutUs"){
+  else if(page == "aboutUs"){
     document.getElementById("id04").style.display = "none";
     document.getElementById("playlists-list").style.display = "none";
+    document.getElementById("playlists-not-loggedIn").style.display = "none";
     document.getElementById("playlists-loggedIn").style.display = "none";
     document.getElementById("aboutUsPage").style.display = "block";
+
     return;
   }
 }
