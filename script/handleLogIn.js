@@ -133,10 +133,12 @@ function sign(option) {
   document.getElementById("playlists-not-loggedIn").style.display = "none";
   if (option == "in") {
     document.getElementById("id00").style.display = "none";
+    document.getElementById("aboutUsPage").style.display = "none";
     document.getElementById("id01").style.display = "block";
     return
   }
   document.getElementById("id01").style.display = "none";
+  document.getElementById("aboutUsPage").style.display = "none";
   document.getElementById("id00").style.display = "block";
   return
 }
