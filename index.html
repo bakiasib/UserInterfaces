@@ -1949,6 +1949,29 @@
 
             </form>
         </div>
+
+
+                <!-- About Us Pafe -->
+                <div id="aboutUsPage" class="modal">
+                    <form class="modal-content animate" id="playlist-data" onSubmit="addNewPlaylist(event)">
+                        <h2 style="padding: 5%;font-weight: 400;font-size: 400%;color: #272626;left: 0px;
+                        margin-top: -5%;
+                        margin-bottom: 8%;">About Us</h2>
+        
+        
+                        <div class="container" id="container-songs" style="
+                        font-family: sans-serif;
+                        padding: 5%;
+                    ">
+                    
+                            <p class="aboutUsText"     style= "font-size: 100%;"
+                            >Amplify is a student-run music streaming service designed to enable listeners of all ages and walks of life to enjoy music the way they want to. By democratizing access and simplifying the user interface while allowing customizability, we hope to empower self-expression for everyone
+                        </p>
+
+
+        
+                    </form>
+                </div>
     </main>
     <!-- Sidebar where the menu items are listed with their icons and description together with link to Privacy and Cookies Policy-->
     <div id="sidebar">
@@ -1978,8 +2001,8 @@
             </tr>
         </table>
 
-        <a href=""
-            style="grid-area: link1;text-align: center;font-size: 90%;text-decoration: none;color: black;">About us</a>
+        <a onclick="navigateSideBar('aboutUs')" 
+            style="grid-area: link1;text-align: center;font-size: 90%;text-decoration: none;color: black;cursor: pointer;">About us</a>
         <a href=""
             style="grid-area: link2;text-align: center;font-size: 90%;text-decoration: none;color: black;">Privacy
             policy</a>

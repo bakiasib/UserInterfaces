@@ -320,7 +320,8 @@ function navDropDown(option) {
 //function to navigate the sidebar in main page
 function navigateSideBar(page) {
 
-  if (getCookie("loggedIn").length < 2) {
+
+  if (getCookie("loggedIn").length < 2 && page != "aboutUs") {
     alert("You need to be logged in to access this page");
     return;
   }
@@ -338,22 +339,33 @@ function navigateSideBar(page) {
   }
 
   if (page == "home") {
+    document.getElementById("aboutUsPage").style.display = "none";
     document.getElementById("id04").style.display = "none";
     document.getElementById("playlists-list").style.display = "none";
     document.getElementById("playlists-loggedIn").style.display = "block";
 
     return;
   } else if (page == "playlists") {
+    document.getElementById("aboutUsPage").style.display = "none";
     document.getElementById("playlists-loggedIn").style.display = "none";
     document.getElementById("id04").style.display = "none";
     document.getElementById("playlists-list").style.display = "block";
 
     return
   } else if (page == "create") {
+    document.getElementById("aboutUsPage").style.display = "none";
     document.getElementById("playlists-loggedIn").style.display = "none";
     document.getElementById("playlists-list").style.display = "none";
     document.getElementById("id04").style.display = "block";
     return
+  }
+
+  if(page == "aboutUs"){
+    document.getElementById("id04").style.display = "none";
+    document.getElementById("playlists-list").style.display = "none";
+    document.getElementById("playlists-loggedIn").style.display = "none";
+    document.getElementById("aboutUsPage").style.display = "block";
+    return;
   }
 }
 //function to change order of songs in a playlist
