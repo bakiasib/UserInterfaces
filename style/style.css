@@ -44,7 +44,7 @@
     display: grid;
     overflow: hidden;
     height: 100vh;
-    grid-template-columns: 13% 87%;
+    grid-template-columns: 12% 88%;
     grid-template-rows: 8% 2% 80% 2% 8%;
     grid-template-areas:
         "header header2"
@@ -207,6 +207,7 @@
     grid-area: profile-dropdown;
     position: relative;
     display: inline-block;
+    z-index: 100;
 }
 
 #profile-dropdown-content{
