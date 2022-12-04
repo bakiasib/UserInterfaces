@@ -76,12 +76,13 @@
     grid-template-rows: unset;
     overflow: scroll;
     box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
+    border-radius: 4%;
 }
 
 #title {
     grid-area: title;
-    color: #9c3433;
-    font-family: 'Material Symbols Outlined';
+    color: black;
+    font-family: 'Audiowide';
     font-size: large;
     position: absolute;
     left: 12%;
@@ -198,6 +199,7 @@
     border-radius: 0%;
     width: auto;
     box-shadow: 0 0 29px rgb(80 79 79 / 65%), 0px 4px 14px rgb(150 131 131 / 46%);
+    border-radius: 4%;
     cursor: pointer;
 }
 
@@ -212,6 +214,7 @@
     position: absolute;
     background-color: rgb(241, 241, 241);
     min-width: 160px;
+    border-radius: 4%;
     box-shadow: rgb(0 0 0 / 20%) 0px 8px 16px 0px;
     z-index: 1;
     top: 106%;
@@ -614,3 +617,12 @@ input[type=text], input[type=password] {
   
 
   
+
+  h2 {
+    font-family: 'Lora';
+    font-weight: 800;
+  }
+
+  p {
+    font-family: 'Lora';
+  }
