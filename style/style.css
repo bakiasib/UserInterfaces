@@ -52,6 +52,7 @@
         "sidebar main-section"
         ". ."
         "footer footer";
+    max-height: 795px;
 }
 #containerP {
     display: grid;
@@ -322,7 +323,6 @@ footer {
 .flex-container , .playlists-flex-container, .playlists-flex-container-2{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     overflow: scroll;
 }
@@ -334,6 +334,7 @@ footer {
     width: 100%;
     padding: 5%;
     height: 300px;
+    max-width: 230px;
 }
 
 p{
@@ -538,14 +539,25 @@ input[type=text], input[type=password] {
     background-blend-mode: difference;
   }
   
-  #myUL-songs, #myUL-songs-main {
+   #myUL-songs-main {
   display:none;
     list-style-type: none;
     padding: 0;
     margin: 0;
     z-index: 99 !important;
     position: absolute;
+    top:77%
   }
+
+  #myUL-songs {
+    display:none;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      z-index: 99 !important;
+      position: absolute;
+      top:57%
+    }
   
   #myUL-songs li a, #myUL-songs-main li a  {
     border: 1px solid #ddd;
