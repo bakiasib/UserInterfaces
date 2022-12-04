@@ -52,7 +52,7 @@
         "sidebar main-section"
         ". ."
         "footer footer";
-    max-height: 795px;
+    max-height: 800px;
 }
 #containerP {
     display: grid;
