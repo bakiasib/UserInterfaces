@@ -1,3 +1,23 @@
+//copy link
+function copylink(){
+  document.querySelectorAll(".copy-link").forEach((copyLinkParent) => {
+  const inputField = copyLinkParent.querySelector(".copy-link-input");
+  const copyButton = copyLinkParent.querySelector(".copy-link-button");
+  const text = inputField.value;
+
+  inputField.addEventListener("focus", () => inputField.select());
+
+  copyButton.addEventListener("click", () => {
+    inputField.select();
+    navigator.clipboard.writeText(text);
+
+    inputField.value = "Copied!";
+    setTimeout(() => (inputField.value = text), 2000);
+  });
+});
+}
+
+
 //function to countdown to the release date
 function countdown(releaseDate, id) {
   var countDownDate = new Date(releaseDate).getTime();
@@ -16,6 +36,7 @@ function countdown(releaseDate, id) {
     }
   }, 1000);
 }
+
 
 //creating cookies for the user
 function createCookies(uname, psw, fname, lname, email, dob, accepted, profilePic) {
@@ -546,4 +567,5 @@ function songSearchMain() {
     }
   }
 }
+
 

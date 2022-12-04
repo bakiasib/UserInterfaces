@@ -570,3 +570,47 @@ input[type=text], input[type=password] {
     margin: -7% 0px 20px 0;
     font-size: initial;
   }
+
+
+.copy-link {
+    --height: 36px;
+    display: flex;
+    width: 200px;
+    margin-left: 48px;
+  }
+  
+  .copy-link-input {
+    padding: 4 2px;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    border-right: none;
+    outline: none;
+    margin-top: 1%;
+    margin-bottom: 12%;
+    height: 28px;
+  }
+  
+  .copy-link-input:hover {
+    background: #eeeeee;
+  }
+  
+  .album-img .copy-link-button {
+    flex-shrink: 0;
+    width: var(--height);
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dddddd;
+    color: #333333;
+    outline: none;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+  }
+  
+  .copy-link-button:hover {
+    background: #cccccc;
+  }
+  
+
+  
