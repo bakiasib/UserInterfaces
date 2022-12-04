@@ -298,6 +298,7 @@ function navDropDown(option) {
   document.getElementById("playlists-list").style.display = "none";
   document.getElementById("id04").style.display = "none";
   document.getElementById("playlists-loggedIn").style.display = "none";
+  document.getElementById("aboutUsPage").style.display = "none";
   if (document.querySelector('[id^="playlist-page-"]') != null) {
     for (var i = 0; i < document.querySelectorAll('[id^="playlist-page-"]').length; i++) {
       document.querySelectorAll('[id^="playlist-page-"]')[i].style.display = "none";
@@ -451,6 +452,7 @@ function showPlaylist(playlistName) {
   document.getElementById("playlists-list").style.display = "none";
   document.getElementById("id04").style.display = "none";
   document.getElementById("playlists-loggedIn").style.display = "none";
+  document.getElementById("aboutUsPage").style.display = "none";
   document.getElementById("id02").style.display = "none";
   document.getElementById("profile-playlists").style.display = "none";
   if (document.querySelector('[id^="playlist-page-"]') != null) {
