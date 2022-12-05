@@ -449,6 +449,7 @@ function fillPlaylist(songList, playlistName, imgLink) {
 
     songName.setAttribute("id", newFavId + "-song");
     songName.childNodes[5].setAttribute("onclick", "changeFill('" + newFavId + "')");
+    songName.childNodes[5].childNodes[1].innerHTML = "delete";
     songName.childNodes[5].setAttribute("style", document.getElementById(songList[i]).childNodes[5].getAttribute("style"));
     songName.childNodes[5].childNodes[1].setAttribute("id", newFavId);
     songName.childNodes[5].childNodes[1].setAttribute("style", "font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;");

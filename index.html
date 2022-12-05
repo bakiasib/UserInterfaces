@@ -62,7 +62,7 @@
         <!-- Dropdown menu for user profile -->
         <div id="profile-dropdown">
             <img id="profile"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV1rfg8FUtG737DdpdULz2SsX_bre7Q6QP_w&usqp=CAU"> 
+                src="https://miro.medium.com/max/1400/1*l2AFc33U7grIeMML0a0unQ.jpeg"> 
             <div id="profile-dropdown-content">
                 <button onclick="navDropDown('account')">Account</button>
                 <button onclick="navDropDown('profile')">Profile</a>
@@ -502,7 +502,7 @@
                     <p id="profile-tittle" style="font-weight: 400;margin-left: 7%;position: relative;top: 30px;">
                         Profile</p>
 
-                    <img id="profile2" src="https://www.w3schools.com/howto/img_avatar.png" style="
+                    <img id="profile2" src="https://miro.medium.com/max/1400/1*l2AFc33U7grIeMML0a0unQ.jpeg" style="
                         width: 100%;
                         height: auto;
                         margin-top: -18%;
@@ -584,6 +584,7 @@
                 <div class="main-headers">
                     <h2 style="padding: 5%;   padding-bottom: 0%;font-weight: 400;   margin: 0%;">Playlists</h2>
                 </div>
+                
                 <div class="playlists-flex-container">
                     <div class="album-img"> <img src="images/playlist1.webp" width="150" height="150"
                             onclick="navArtist('acdc')" style="
@@ -2020,7 +2021,7 @@
             var imgLink = document.getElementsByClassName("playlists-flex-container")[i].childNodes[j].childNodes[1].src;
             var display = document.getElementsByClassName("playlists-flex-container")[i].childNodes[j].childNodes[1];
             var playlistName = document.getElementsByClassName("playlists-flex-container")[i].childNodes[j].childNodes[3].innerHTML;
-            var songList = ['fav-icon1-song', 'fav-icon2-song', 'fav-icon3-song'];
+            var songList = ['fav-icon1-song', 'fav-icon2-song', 'fav-icon5-song'];
             fillPlaylist(songList, playlistName, imgLink);
             display.setAttribute("onclick", "showPlaylist(" + "'" + playlistName + "'" + ")");
         }
