@@ -77,7 +77,8 @@
     grid-template-rows: unset;
     overflow: scroll;
     box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
- 
+    transition: filter 0ms ease-in-out 300ms;
+
 }
 
 #title {
@@ -330,8 +331,9 @@ footer {
     overflow-wrap: anywhere;
     text-align: center;
     width: 100%;
-    padding: 5%;
+    padding: 6%;
     height: 300px;
+    min-width: 230px;
     max-width: 230px;
 }
 
@@ -343,10 +345,10 @@ p{
 
 .album-img .btn {
     position: relative;
-    top: 8%;
-    left: 5%;
-    width: 38%;
-    height: 20%;
+    top: 5%;
+    left: 0%;
+    width: 28%;
+    height: 17%;
     display: none;
     border-style: none;
 }
@@ -354,22 +356,24 @@ p{
 .album-img .btn-pause {
     position: relative;
     top: -12%;
-    left: 50%;
-    width: 30%;
+    left: 35%;
+    width: 28%;
     height: 17%;
     display: none;
     border-style: none;
 }
 
-.album-img .btn {
+.album-img .btn-share {
     position: relative;
-    top: 5%;
-    left: 18%;
-    width: 30%;
+    top: -29%;
+    left: 71%;
+    width: 28%;
     height: 17%;
     display: none;
     border-style: none;
 }
+
+
 
 .album-img .btn-b {
     position: relative;
@@ -382,6 +386,67 @@ p{
     border-radius: 50%;
 }
 
+.share-song-pop{
+    position: absolute;
+    top: -100%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, 0.1);
+    margin-top: -25px;
+    transition: top 0ms ease-in-out 300ms, 
+    opacity 300ms ease-in-out, 
+    margin-top 300ms ease-in-out;
+}
+
+
+.share-song-pop > * {
+    margin: 15px 0px;
+}
+
+.share-song-pop .close-btn-pop {
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: #eee;
+    color:#111;
+    border:none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+}
+
+.active-share{
+    overflow: hidden;
+
+}
+
+#main-section::-webkit-scrollbar, .playlists-flex-container::-webkit-scrollbar,  .flex-container::-webkit-scrollbar{
+    display: none;
+}
+
+.active-share #main-section{
+    filter: blur(5px);
+    background: rgb(0, 0, 0, 0.1);
+    transition: filter 0ms ease-in-out 0ms;
+    pointer-events: none;
+}
+
+.active-share .share-song-pop{
+    top:  50%;
+    opacity: 1;
+    margin-top: 0px;
+    transition: top 0ms ease-in-out 0ms, 
+                opacity 300ms ease-in-out, 
+                margin-top 300ms ease-in-out;
+}
+
+
+
 .album-img .btn-f {
     position: relative;
     top: -45%;
@@ -392,6 +457,7 @@ p{
     display: none;
     border-radius: 50%;
 }
+
 .album-img:hover {
     background: lightgray;
 }
@@ -399,6 +465,9 @@ p{
     display: block;
 }
 .album-img:hover .btn-pause{
+    display: block;
+}
+.album-img:hover .btn-share{
     display: block;
 }
 
@@ -411,13 +480,23 @@ p{
 }
 
 /* Style for Login and Sign Up */
-input[type=text], input[type=password] {
+ #id00 input[type=text], #id00 input[type=password],
+ #id01 input[type=text], #id01 input[type=password],  #id02 input[type=text], #id02 input[type=password],  #id04 input[type=text], #id04 input[type=password] {
     width: 100%;
     padding: 2% 2%;
     display: inline-block;
     box-sizing: border-box;
     margin-top: 3%;
     margin-bottom: 9%;
+}
+
+/* Style for Login and Sign Up */
+#dropdown-search-main input[type=text], #dropdown-search-main input[type=password]{
+   width: 100%;
+   display: inline-block;
+   box-sizing: border-box;
+   margin-top: 3%;
+   margin-bottom: 9%;
 }
   
    #id00 button, #id01 button,  #id02 button, .btn-playlist  {
@@ -584,42 +663,30 @@ input[type=text], input[type=password] {
     margin: -7% 0px 20px 0;
     font-size: initial;
   }
-
-
-.copy-link {
-    --height: 36px;
-    display: flex;
-    width: 200px;
-    margin-left: 48px;
-  }
   
   .copy-link-input {
-    padding: 4 2px;
     font-size: 14px;
     border: 1px solid #cccccc;
-    border-right: none;
     outline: none;
     margin-top: 1%;
-    margin-bottom: 12%;
-    height: 28px;
+    height: 27px;
+    width: 70%;
+
   }
   
   .copy-link-input:hover {
     background: #eeeeee;
+    
   }
   
-  .album-img .copy-link-button {
-    flex-shrink: 0;
-    width: var(--height);
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  #copy-link .copy-link-button {
     background: #dddddd;
     color: #333333;
-    outline: none;
     border: 1px solid #cccccc;
     cursor: pointer;
+    position: relative;
+    width: 15%;
+    height: 30px;
   }
   
   .copy-link-button:hover {

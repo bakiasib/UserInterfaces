@@ -61,8 +61,8 @@
         </div>
         <!-- Dropdown menu for user profile -->
         <div id="profile-dropdown">
-            <img id="profile" 
-                src="https://miro.medium.com/max/1400/1*l2AFc33U7grIeMML0a0unQ.jpeg"> 
+            <img id="profile"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV1rfg8FUtG737DdpdULz2SsX_bre7Q6QP_w&usqp=CAU"> 
             <div id="profile-dropdown-content">
                 <button onclick="navDropDown('account')">Account</button>
                 <button onclick="navDropDown('profile')">Profile</a>
@@ -333,6 +333,8 @@
                     </div>
                 </div>
 
+
+
                 <!-- Songs to jump back into -->
                 <div class="main-headers">
                     <h2 style="padding: 5%;  padding-bottom: 0%;font-weight: 400;  margin: 0%;">Jump back in </h2>
@@ -347,12 +349,9 @@
                         <button type="button" class="btn-pause" onclick="changeFill('fav-icon')">
                             <span id="fav-icon" class="material-symbols-outlined"> favorite</span>
                         </button>
-                        <div class="copy-link">
-                            <input type="text" class="copy-link-input" value="https://www.amplify.com" readonly>
-                            <button type="button" class="copy-link-button" onclick="copylink()">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                          </div>
+                        <button type="button" class="btn-share" onclick="shareLink('RunawayKanye')">
+                            <span class="material-symbols-outlined">share</span>
+                        </button>
                         <p> Runaway by Kanye West, Pusha T </p>
                     </div>
 
@@ -364,12 +363,9 @@
                         <button type="button" class="btn-pause" onclick="changeFill('fav-icon1')">
                             <span id="fav-icon1" class="material-symbols-outlined"> favorite</span>
                         </button>
-                        <div class="copy-link">
-                            <input type="text" class="copy-link-input" value="https://www.amplify.com" readonly>
-                            <button type="button" class="copy-link-button" onclick="copylink()">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                          </div>
+                        <button type="button" class="btn-share" onclick="shareLink('Starboy')">
+                            <span class="material-symbols-outlined">share</span>
+                        </button>
                         <p> Starboy - The Weeknd, Daft Punk </p>
                     </div>
 
@@ -381,12 +377,9 @@
                         <button type="button" class="btn-pause" onclick="changeFill('fav-icon2')">
                             <span id="fav-icon2" class="material-symbols-outlined"> favorite</span>
                         </button>
-                        <div class="copy-link">
-                            <input type="text" class="copy-link-input" value="https://www.amplify.com" readonly>
-                            <button type="button" class="copy-link-button" onclick="copylink()">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                          </div>
+                        <button type="button" class="btn-share" onclick="shareLink('flowerboy')">
+                            <span class="material-symbols-outlined">share</span>
+                        </button>
                         <p> See You Again - Tyler the Creator, Kali Uchis </p>
                     </div>
 
@@ -438,12 +431,9 @@
                         <button type="button" class="btn-pause" onclick="changeFill('fav-icon5')">
                             <span id="fav-icon5" class="material-symbols-outlined"> favorite</span>
                         </button>
-                        <div class="copy-link">
-                            <input type="text" class="copy-link-input" value="https://www.amplify.com" readonly>
-                            <button type="button" class="copy-link-button" onclick="copylink()">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                          </div>
+                        <button type="button" class="btn-share" onclick="shareLink('BeastieBoy')">
+                            <span class="material-symbols-outlined">share</span>
+                        </button>
                         <p> Fight For Your Right - Beastie Boys </p>
                     </div>
 
@@ -751,12 +741,9 @@
                             style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;">
                             <span id="fav-icon" class="material-symbols-outlined"> favorite</span>
                         </button>
-                        <div class="copy-link">
-                            <input type="text" class="copy-link-input" value="https://www.amplify.com" readonly>
-                            <button type="button" class="copy-link-button" onclick="copylink()">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                          </div>
+                        <button type="button" class="btn-share" onclick="shareLink('RunawayKanye')">
+                            <span class="material-symbols-outlined">share</span>
+                        </button>
                         <p> Runaway by Kanye West, Pusha T </p>
                     </div>
                     <div id="fav-icon1-song" class="album-img" style="display: none"> <img src="images/Starboy.jpeg"
@@ -769,12 +756,9 @@
                             style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;">
                             <span id="fav-icon1" class="material-symbols-outlined"> favorite</span>
                         </button>
-                        <div class="copy-link">
-                            <input type="text" class="copy-link-input" value="https://www.amplify.com" readonly>
-                            <button type="button" class="copy-link-button" onclick="copylink()">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                          </div>
+                        <button type="button" class="btn-share" onclick="shareLink('Starboy')">
+                            <span class="material-symbols-outlined">share</span>
+                        </button>
                         <p> Starboy - The Weeknd, Daft Punk </p>
                     </div>
 
@@ -788,12 +772,9 @@
                             style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;">
                             <span id="fav-icon2" class="material-symbols-outlined"> favorite</span>
                         </button>
-                        <div class="copy-link">
-                            <input type="text" class="copy-link-input" value="https://www.amplify.com" readonly>
-                            <button type="button" class="copy-link-button" onclick="copylink()">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                          </div>
+                        <button type="button" class="btn-share" onclick="shareLink('SeeYouAgain')">
+                            <span class="material-symbols-outlined">share</span>
+                        </button>
                         <p> See You Again - Tyler the Creator, Kali Uchis </p>
                     </div>
 
@@ -807,12 +788,9 @@
                             style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;">
                             <span id="fav-icon3" class="material-symbols-outlined"> favorite</span>
                         </button>
-                        <div class="copy-link">
-                            <input type="text" class="copy-link-input" value="https://www.amplify.com" readonly>
-                            <button type="button" class="copy-link-button" onclick="copylink()">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                          </div>
+                        <button type="button" class="btn-share" onclick="shareLink('FeelGood')">
+                            <span class="material-symbols-outlined">share</span>
+                        </button>
                         <p> Feel Good Inc. - Gorillaz </p>
                     </div>
 
@@ -2026,6 +2004,17 @@
     </footer>
 
 </div>
+
+<div class="share-song-pop"> 
+    <button class="close-btn-pop" onclick="closePop()">&times;</button>
+    <h2> Copy link to share song</h2>
+    <div id="copy-link">
+        <input type="text" class="copy-link-input" value="" readonly>
+        <button type="button" class="copy-link-button">
+            <i class="fa-regular fa-copy"></i>
+        </button>
+      </div>
+</div>
 <script>
 
     var rxEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$/; // Regex for email validation
@@ -2152,7 +2141,9 @@
             fillPlaylist(songList, playlistName, imgLink);
             display.setAttribute("onclick", "showPlaylist(" + "'" + playlistName + "'" + ")");
         }
-    }   //navigation function to show artist/user page
+    }   
+    
+    //navigation function to show artist/user page
     function navArtist(artist) {
         document.getElementById("main-section").scrollTop = 0;
         document.getElementById("profile-playlists").style.display = "none";

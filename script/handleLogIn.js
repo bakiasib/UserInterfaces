@@ -1,9 +1,12 @@
+
+
 //copy link
-function copylink(){
-  document.querySelectorAll(".copy-link").forEach((copyLinkParent) => {
+function copylink(id){
+  copyLinkParent = document.getElementById("copy-link");
   const inputField = copyLinkParent.querySelector(".copy-link-input");
   const copyButton = copyLinkParent.querySelector(".copy-link-button");
-  const text = inputField.value;
+  inputField.value = "https://www.amplify.com/" + id;
+  text = inputField.value; 
 
   inputField.addEventListener("focus", () => inputField.select());
 
@@ -14,8 +17,18 @@ function copylink(){
     inputField.value = "Copied!";
     setTimeout(() => (inputField.value = text), 2000);
   });
-});
 }
+
+function shareLink(id) {
+  document.body.classList.add("active-share");
+  copylink(id);
+}
+
+function closePop(){
+  document.body.classList.remove("active-share");
+}
+
+
 
 
 //function to countdown to the release date
