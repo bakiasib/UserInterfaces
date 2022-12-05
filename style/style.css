@@ -367,7 +367,7 @@ p{
 .album-img .btn-share {
     position: relative;
     top: -42%;
-    left: 70%;
+    left: 69.5%;
     width: 28%;
     height: 24%;
     display: none;
@@ -378,12 +378,13 @@ p{
 
 .album-img .btn-b {
     position: relative;
-    top: -170%;
-    left: -14%;
-    width: 26%;
-    height: 19%;
-    display: none;
+    top: -180.5%;
+    left: -17%;
+    background: lightgray;
+    width: fit-content;
+    height: fit-content;
     border-style: none;
+
 }
 
 .share-song-pop{
@@ -449,12 +450,13 @@ p{
 
 .album-img .btn-f {
     position: relative;
-    top: -152%;
-    left: 86%;
-    width: 26%;
-    height: 19%;
+    top: -158.5%;
+    left: 99.5%;
+    width: fit-content;
+    height: fit-content;
     border-style: none;
     display: none;
+    background: lightgray;
 }
 
 .album-img:hover {
